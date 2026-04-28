@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 2690786895
+    locked: 0
+  - name: Sun
+    uniqueID: 1171015619
+    locked: 0
+  - name: Godrays 1
+    uniqueID: 3042362819
+    locked: 0
+  - name: Clouds
+    uniqueID: 1616069899
+    locked: 0
+  - name: Floor4
+    uniqueID: 2566185815
+    locked: 0
+  - name: Floor3
+    uniqueID: 3951411937
+    locked: 0
+  - name: Pillars3
+    uniqueID: 3109203179
+    locked: 0
+  - name: Godrays 2
+    uniqueID: 2054952373
+    locked: 0
+  - name: Boss
+    uniqueID: 2435425833
+    locked: 0
+  - name: Floor2
+    uniqueID: 2464730793
+    locked: 0
+  - name: Pillars2
+    uniqueID: 4202559141
+    locked: 0
+  - name: Floor1
+    uniqueID: 3702213493
+    locked: 0
+  - name: Pillars1
+    uniqueID: 3138316437
+    locked: 0
+  - name: Godrays3
+    uniqueID: 903462923
+    locked: 0
+  - name: UI Background
+    uniqueID: 560100631
+    locked: 0
+  - name: UI Midground
+    uniqueID: 2720190323
+    locked: 0
+  - name: UI Foreground
+    uniqueID: 963058321
+    locked: 0
+  m_RenderingLayers:
+  - Default
