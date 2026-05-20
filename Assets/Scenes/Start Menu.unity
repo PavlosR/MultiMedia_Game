@@ -6511,6 +6511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1101076421}
   - component: {fileID: 1101076422}
+  - component: {fileID: 1101076423}
   m_Layer: 0
   m_Name: Light Plane
   m_TagString: Untagged
@@ -6592,6 +6593,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1101076423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101076420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45857e61afde5a45b5b6dc4594f3049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpeningCutsceneSun
+  spriteRenderer: {fileID: 0}
+  size: 0
+  intensity: 0
 --- !u!1 &1238053620
 GameObject:
   m_ObjectHideFlags: 0
@@ -11719,12 +11735,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1404656432}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1404656432
 Transform:
   m_ObjectHideFlags: 0
@@ -22386,17 +22402,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6a143c8ede09d4baaeccd6797c1c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::openingCutscene
-  lightBrightness: 0
-  lightVisible: 0
-  sunSize: 0
-  sunVisible: 0
-  startTime: 2
-  starFadeTime: 2
-  starSpinSpeed: 2
+  startTime: 1
+  blackScreen: {fileID: 0}
   star: {fileID: 1543144353}
   starScript: {fileID: 0}
-  sun: {fileID: 0}
-  blackScreen: {fileID: 0}
+  starFadeTime: 2
+  starSpinSpeed: 2
+  starVisible: 0
+  sun: {fileID: 1101076420}
+  sunScript: {fileID: 0}
+  sunTime: 1
+  sunSize: 1
+  sunIntensity: 1
+  sunVisible: 0
+  lightPlane: {fileID: 0}
+  lightBrightness: 0
+  lightVisible: 0
 --- !u!1 &2107927227
 GameObject:
   m_ObjectHideFlags: 0

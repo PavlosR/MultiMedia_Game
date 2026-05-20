@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class openingCutsceneStarSpin : MonoBehaviour
+public class OpeningCutsceneStarSpin : MonoBehaviour
 {
 
     public float spinSpeed;
