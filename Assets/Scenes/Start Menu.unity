@@ -6322,13 +6322,14 @@ GameObject:
   m_Component:
   - component: {fileID: 977283560}
   - component: {fileID: 977283561}
+  - component: {fileID: 977283562}
   m_Layer: 0
   m_Name: Light Plane 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &977283560
 Transform:
   m_ObjectHideFlags: 0
@@ -6339,7 +6340,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.57, y: 1.57, z: 1.57}
+  m_LocalScale: {x: 29.69, y: 29.69, z: 29.69}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1321825243}
@@ -6370,7 +6371,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9147e9009c2f1384d99df514ac2cb097, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6394,7 +6395,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6403,6 +6404,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &977283562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977283559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3339b3ffaf3538846b6999cf66052c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  alpha: 0
+  spriteRenderer: {fileID: 977283561}
+  fade: 0
+  newColour: {r: 0, g: 0, b: 0, a: 0}
+  timePassed: 0
 --- !u!1 &988335995
 GameObject:
   m_ObjectHideFlags: 0
@@ -6608,6 +6626,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   size: 0
   intensity: 0
+  scale: {x: 0, y: 0}
+  timePassed: 0
 --- !u!1 &1238053620
 GameObject:
   m_ObjectHideFlags: 0
@@ -22402,10 +22422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6a143c8ede09d4baaeccd6797c1c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::openingCutscene
-  startTime: 1
-  blackScreen: {fileID: 0}
   star: {fileID: 1543144353}
   starScript: {fileID: 0}
+  startTime: 1
   starFadeTime: 2
   starSpinSpeed: 2
   starVisible: 0
@@ -22415,9 +22434,14 @@ MonoBehaviour:
   sunSize: 1
   sunIntensity: 1
   sunVisible: 0
-  lightPlane: {fileID: 0}
+  lightPlane: {fileID: 977283559}
+  lightScript: {fileID: 0}
+  lightPlaneTime: 0
   lightBrightness: 0
   lightVisible: 0
+  blackScreen: {fileID: 2107927227}
+  fadeOut: 2
+  blackScreenVisible: 0
 --- !u!1 &2107927227
 GameObject:
   m_ObjectHideFlags: 0

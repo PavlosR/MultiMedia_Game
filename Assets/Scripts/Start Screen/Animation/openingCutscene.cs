@@ -2,17 +2,15 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class openingCutscene : MonoBehaviour
+public class OpeningCutscene : MonoBehaviour
 { 
-    [SerializeField] private float startTime;
-
-    [SerializeField] private GameObject blackScreen;
 
     [Header("Star")]
 
     [SerializeField] private GameObject star;
     [SerializeField] private OpeningCutsceneStarSpin starScript;
 
+    [SerializeField] private float startTime;
     [SerializeField] private float starFadeTime;
     [SerializeField] private float starSpinSpeed;
     [SerializeField] private bool starVisible;
@@ -33,9 +31,18 @@ public class openingCutscene : MonoBehaviour
     [Header("Light")]
 
     [SerializeField] private GameObject lightPlane;
+    [SerializeField] private OpeningCutsceneLightPlane lightScript;
 
+    [SerializeField] private float lightPlaneTime;
     [SerializeField] private float lightBrightness;
     [SerializeField] private bool lightVisible;
+
+
+    [Header("Black Screen")]
+    [SerializeField] private GameObject blackScreen;
+
+    [SerializeField] private float fadeOut;
+    [SerializeField] private bool blackScreenVisible;
 
     private float timePassed;
 
@@ -44,6 +51,7 @@ public class openingCutscene : MonoBehaviour
     {
         starScript = star.GetComponent<OpeningCutsceneStarSpin>();
         sunScript = sun.GetComponent<OpeningCutsceneSun>();
+        lightScript = lightPlane.GetComponent<OpeningCutsceneLightPlane>();
 
         starScript.spinSpeed = starSpinSpeed;
 
@@ -51,6 +59,8 @@ public class openingCutscene : MonoBehaviour
         lightVisible = false;
 
         sunVisible = false;
+
+        blackScreenVisible = true;
 
         timePassed = 0f;
         
@@ -69,6 +79,8 @@ public class openingCutscene : MonoBehaviour
 
         star.SetActive(starVisible);
         sun.SetActive(sunVisible);
+        lightPlane.SetActive(lightVisible);
+        blackScreen.SetActive(blackScreenVisible);
 
         sunScript.size = sunSize;
         sunScript.intensity = sunIntensity;
@@ -87,8 +99,15 @@ public class openingCutscene : MonoBehaviour
 
         starVisible = false;
         yield return new WaitForSeconds(sunTime);
-        sunVisible = true;
 
-        yield return null;
+        sunVisible = true;
+        yield return new WaitForSeconds(lightPlaneTime);
+
+        lightVisible = true;
+        yield return new WaitForSeconds(fadeOut);
+
+        blackScreenVisible = false;
+        sunVisible = false;
+        lightScript.fade = true;
     }
 }
