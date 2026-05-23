@@ -3,7 +3,16 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class OpeningCutscene : MonoBehaviour
-{ 
+{
+
+    [Header("UI")]
+
+    [SerializeField] private GameObject UIMan;
+    [SerializeField] private OpeningUIManager UIManScript;
+    [SerializeField] private UISwapInfo UISwapInfo;
+
+    [SerializeField] private float finishCutscene;
+    [SerializeField] private bool UIActive;
 
     [Header("Star")]
 
@@ -52,6 +61,7 @@ public class OpeningCutscene : MonoBehaviour
         starScript = star.GetComponent<OpeningCutsceneStarSpin>();
         sunScript = sun.GetComponent<OpeningCutsceneSun>();
         lightScript = lightPlane.GetComponent<OpeningCutsceneLightPlane>();
+        UIManScript = UIMan.GetComponent<OpeningUIManager>();
 
         starScript.spinSpeed = starSpinSpeed;
 
@@ -63,6 +73,8 @@ public class OpeningCutscene : MonoBehaviour
         blackScreenVisible = true;
 
         timePassed = 0f;
+
+        UIActive = false;
         
 
     }
@@ -109,5 +121,8 @@ public class OpeningCutscene : MonoBehaviour
         blackScreenVisible = false;
         sunVisible = false;
         lightScript.fade = true;
+        yield return new WaitForSeconds(finishCutscene);
+
+        UIManScript.Swap(UISwapInfo);
     }
 }
