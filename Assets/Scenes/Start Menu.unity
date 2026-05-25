@@ -13411,7 +13411,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15df72b6f5205fc40acbe3d024b7a6eb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
 --- !u!1 &1431802078
 GameObject:
   m_ObjectHideFlags: 0
@@ -24859,6 +24859,7 @@ GameObject:
   - component: {fileID: 2052649505}
   - component: {fileID: 2052649506}
   - component: {fileID: 2052649507}
+  - component: {fileID: 2052649508}
   m_Layer: 0
   m_Name: Cutscene Manager
   m_TagString: Untagged
@@ -24934,6 +24935,18 @@ MonoBehaviour:
   current: {fileID: 0}
   enable: {fileID: 377243030}
   Scene: 
+--- !u!114 &2052649508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052649504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310bf0cf94669774b95a0f89ddbc8341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CutsceneManager
 --- !u!1 &2107927227
 GameObject:
   m_ObjectHideFlags: 0
