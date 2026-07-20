@@ -41,13 +41,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Brightness: 1.5
-    - _Density: 1000
+    - _Brightness: 0.1
+    - _Density: 1000.25
     - _Speed: 0.025
-    - _StarSize: 1
+    - _StarSize: 2.9
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.6701573, g: 1.363203, b: 16, a: 1}
+    - _Color: {r: 15.999998, g: 0.7814548, b: 0.75392616, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8251530805079118523
