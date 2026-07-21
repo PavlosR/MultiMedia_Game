@@ -456,6 +456,7 @@ MonoBehaviour:
   dashTime: 0.1
   dashHeld: 0
   dashDirection: {x: 0, y: 0}
+  dashXMem: 0
 --- !u!114 &688085309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1155540994}
   - component: {fileID: 1155540995}
+  - component: {fileID: 1155540996}
   m_Layer: 0
   m_Name: PlayerArms
   m_TagString: Untagged
@@ -664,6 +666,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1155540996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155540993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f0b77c14d5aed44a8618b6701a3503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerArmsAnim
 --- !u!1 &1335365914
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +906,7 @@ GameObject:
   - component: {fileID: 1608888174}
   - component: {fileID: 1608888175}
   - component: {fileID: 1608888176}
+  - component: {fileID: 1608888177}
   m_Layer: 0
   m_Name: PlayerOrb
   m_TagString: Untagged
@@ -995,6 +1010,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1608888177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608888173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d72982a359803c43859ee37995237b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerOrbAnim
 --- !u!1 &1841129180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,6 +1201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2006545748}
   - component: {fileID: 2006545749}
+  - component: {fileID: 2006545750}
   m_Layer: 0
   m_Name: PlayerBody
   m_TagString: Untagged
@@ -1255,6 +1283,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2006545750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006545747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca3de344d1c02a489604cdbee625980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBodyAnim
 --- !u!1 &2069503599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,6 +1305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069503600}
   - component: {fileID: 2069503601}
+  - component: {fileID: 2069503602}
   m_Layer: 0
   m_Name: PlayerLegs
   m_TagString: Untagged
@@ -1346,6 +1387,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2069503602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069503599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75a3fca8f13ae5b4989162401183c3e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLegsAnim
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
