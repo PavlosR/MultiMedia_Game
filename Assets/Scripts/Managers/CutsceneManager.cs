@@ -12,4 +12,5 @@ public class CutsceneManager : MonoBehaviour
     {
         script.enabled = false;
     }
+
 }
