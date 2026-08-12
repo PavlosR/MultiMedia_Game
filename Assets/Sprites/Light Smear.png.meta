@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 54c9378d426680341810de9f0041dffd
+guid: ddbe8749c4923704eb3c795ac49d6deb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2144440891645205984
-    second: Light Sword_0
+      213: -8873625773716212123
+    second: Light Smear_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Light Sword_0
+      name: Light Smear_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ed955411a592cd10800000000000000
-      internalID: 2144440891645205984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Light Sword_1
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2286cb60e092a1418627d7163d676d7
-      internalID: 1909553279
+      spriteID: 566f4ef8f5c8ad480800000000000000
+      internalID: -8873625773716212123
       vertices: []
       indices: 
       edges: []
@@ -160,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5205f46f262517f47a8b870ac1c20abb
+    spriteID: dd159a9d389bbe145bb7aa5a65292638
     internalID: 0
     vertices: []
     indices: 
@@ -168,12 +146,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":192.0,"y":192.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Light Sword_0: 2144440891645205984
-      Light Sword_1: 1909553279
+      Light Smear_0: -8873625773716212123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
