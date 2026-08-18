@@ -1,0 +1,675 @@
+fileFormatVersion: 2
+guid: cc9979725f64a074498f804b4f551018
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2106436331665316206
+    second: Smear Frames_0
+  - first:
+      213: 786601498446485986
+    second: Smear Frames_1
+  - first:
+      213: -6844237441437938573
+    second: Smear Frames_2
+  - first:
+      213: 3994956738946685016
+    second: Smear Frames_3
+  - first:
+      213: -8939855501812371622
+    second: Smear Frames_4
+  - first:
+      213: 8976682813725313860
+    second: Smear Frames_5
+  - first:
+      213: 1690852262972410214
+    second: Smear Frames_6
+  - first:
+      213: 4174912047300330546
+    second: Smear Frames_7
+  - first:
+      213: 7483200027529203627
+    second: Smear Frames_8
+  - first:
+      213: 1347199028632069205
+    second: Smear Frames_9
+  - first:
+      213: 8134065414010051971
+    second: Smear Frames_10
+  - first:
+      213: -73403618037576649
+    second: Smear Frames_11
+  - first:
+      213: 708683811774938433
+    second: Smear Frames_12
+  - first:
+      213: -8325991421025400413
+    second: Smear Frames_13
+  - first:
+      213: -97381735199187116
+    second: Smear Frames_14
+  - first:
+      213: 2165112842938951774
+    second: Smear Frames_15
+  - first:
+      213: -7650667029045695781
+    second: Smear Frames_16
+  - first:
+      213: 8513564680701892232
+    second: Smear Frames_17
+  - first:
+      213: -5829763340595233337
+    second: Smear Frames_18
+  - first:
+      213: -3067583909467644087
+    second: Smear Frames_19
+  - first:
+      213: -1959578737650940413
+    second: Smear Frames_20
+  - first:
+      213: -2331345208262572657
+    second: Smear Frames_21
+  - first:
+      213: 4631166232059271580
+    second: Smear Frames_22
+  - first:
+      213: -3585339491833253529
+    second: Smear Frames_23
+  - first:
+      213: -7012373423703196024
+    second: Smear Frames_24
+  - first:
+      213: -2126506239760400041
+    second: Smear Frames_25
+  - first:
+      213: -3605819651036233577
+    second: Smear Frames_26
+  - first:
+      213: -9071233231907733200
+    second: Smear Frames_27
+  - first:
+      213: -6917781144925003367
+    second: Smear Frames_28
+  - first:
+      213: 846130669931104293
+    second: Smear Frames_29
+  - first:
+      213: 2566190720340198627
+    second: Smear Frames_30
+  - first:
+      213: 8859118831684913049
+    second: Smear Frames_31
+  - first:
+      213: -3669632714072859264
+    second: Smear Frames_32
+  - first:
+      213: 5291981295483122691
+    second: Smear Frames_33
+  - first:
+      213: 8183663032469062152
+    second: Smear Frames_34
+  - first:
+      213: -905664637112892191
+    second: Smear Frames_35
+  - first:
+      213: 7145995290439784567
+    second: Smear Frames_36
+  - first:
+      213: -1875922348851579142
+    second: Smear Frames_37
+  - first:
+      213: 305648577028495237
+    second: Smear Frames_38
+  - first:
+      213: -3655121955840231611
+    second: Smear Frames_39
+  - first:
+      213: -705204521339108805
+    second: Smear Frames_40
+  - first:
+      213: 2184011969197913677
+    second: Smear Frames_41
+  - first:
+      213: -542448678290898897
+    second: Smear Frames_42
+  - first:
+      213: -6426758713995728032
+    second: Smear Frames_43
+  - first:
+      213: -5417067959544851550
+    second: Smear Frames_44
+  - first:
+      213: -5991664290127437045
+    second: Smear Frames_45
+  - first:
+      213: 2140277462333994702
+    second: Smear Frames_46
+  - first:
+      213: 7632868656228724995
+    second: Smear Frames_47
+  - first:
+      213: -6102399725908547588
+    second: Smear Frames_48
+  - first:
+      213: 6874970965626957746
+    second: Smear Frames_49
+  - first:
+      213: 3163735756358195463
+    second: Smear Frames_50
+  - first:
+      213: -2301268599253672308
+    second: Smear Frames_51
+  - first:
+      213: -357434041819707665
+    second: Smear Frames_52
+  - first:
+      213: -5936943851081740489
+    second: Smear Frames_53
+  - first:
+      213: 4199731637379869815
+    second: Smear Frames_54
+  - first:
+      213: -814016571302064426
+    second: Smear Frames_55
+  - first:
+      213: -3449983636171981333
+    second: Smear Frames_56
+  - first:
+      213: -8023383980627400324
+    second: Smear Frames_57
+  - first:
+      213: 225245105626860821
+    second: Smear Frames_58
+  - first:
+      213: 4235258820183858155
+    second: Smear Frames_59
+  - first:
+      213: -5452099439463852111
+    second: Smear Frames_60
+  - first:
+      213: 2283255332118262078
+    second: Smear Frames_61
+  - first:
+      213: -4118047716550915759
+    second: Smear Frames_62
+  - first:
+      213: 6974415329984734068
+    second: Smear Frames_63
+  - first:
+      213: 8351174257936399035
+    second: Smear Frames_64
+  - first:
+      213: -5964945456987253376
+    second: Smear Frames_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Smear Frames_0
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296ac15115f64c2e0800000000000000
+      internalID: -2106436331665316206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_1
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e951be25e19aea00800000000000000
+      internalID: 786601498446485986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37cc9a03f426401a0800000000000000
+      internalID: -6844237441437938573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85858f5ecffe07730800000000000000
+      internalID: 3994956738946685016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5fe62759c04fe380800000000000000
+      internalID: -8939855501812371622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b83756575939c70800000000000000
+      internalID: 8976682813725313860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 669c226bc2d177710800000000000000
+      internalID: 1690852262972410214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 234c5db236440f930800000000000000
+      internalID: 4174912047300330546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baf421007caa9d760800000000000000
+      internalID: 7483200027529203627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_9
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554ad57f06632b210800000000000000
+      internalID: 1347199028632069205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d1cddd56102e070800000000000000
+      internalID: 8134065414010051971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c44ad5cc73bfef0800000000000000
+      internalID: -73403618037576649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_12
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d3aea0c20c5d900800000000000000
+      internalID: 708683811774938433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_13
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a9c4d26ae2247c80800000000000000
+      internalID: -8325991421025400413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smear Frames_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f57d9e3d706aef0800000000000000
+      internalID: -97381735199187116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 70b622735b1ed00459193bec303e12bb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":9.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Smear Frames_0: -2106436331665316206
+      Smear Frames_1: 786601498446485986
+      Smear Frames_10: 8134065414010051971
+      Smear Frames_11: -73403618037576649
+      Smear Frames_12: 708683811774938433
+      Smear Frames_13: -8325991421025400413
+      Smear Frames_14: -97381735199187116
+      Smear Frames_2: -6844237441437938573
+      Smear Frames_3: 3994956738946685016
+      Smear Frames_4: -8939855501812371622
+      Smear Frames_5: 8976682813725313860
+      Smear Frames_6: 1690852262972410214
+      Smear Frames_7: 4174912047300330546
+      Smear Frames_8: 7483200027529203627
+      Smear Frames_9: 1347199028632069205
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
