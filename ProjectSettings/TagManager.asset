@@ -83,14 +83,26 @@ TagManager:
   - name: Godrays3
     uniqueID: 903462923
     locked: 0
-  - name: UI Background
+  - name: Start UI Background
     uniqueID: 560100631
     locked: 0
-  - name: UI Midground
+  - name: Start UI Midground
     uniqueID: 2720190323
     locked: 0
-  - name: UI Foreground
+  - name: Start UI Foreground
     uniqueID: 963058321
+    locked: 0
+  - name: Boss Body
+    uniqueID: 1227017005
+    locked: 0
+  - name: Boss Smear frames
+    uniqueID: 838306851
+    locked: 0
+  - name: Boss Sword
+    uniqueID: 3896711989
+    locked: 0
+  - name: Boss Arm
+    uniqueID: 2553361109
     locked: 0
   m_RenderingLayers:
   - Default

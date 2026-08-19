@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Scan_Scale: -0.66
+    - _Scan_Scale: -0.62
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _Colour: {r: 64, g: 48.586384, b: 9.717276, a: 1}
