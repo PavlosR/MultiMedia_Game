@@ -15,9 +15,18 @@ public class LightBossController : MonoBehaviour
     [SerializeField] private float Health;
 
     [SerializeField] private bool Flipped;
+    private bool canFlip;
     [Header("Walk Variables")]
     [SerializeField] private float xDistance;
     [SerializeField] private float walkSpeed;
+
+    [Header("Attack 1 Variables")]
+    [SerializeField] private GameObject Att1Swing1;
+    [SerializeField] private GameObject Att1Swing2;
+    [SerializeField] private GameObject Att1Swing3;
+    [SerializeField] private GameObject Att1Swing4;
+    [SerializeField] private float Att1JumpX;
+    [SerializeField] private float Att1JumpY;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -28,19 +37,25 @@ public class LightBossController : MonoBehaviour
     void Start()
     {
         //StartCoroutine("Walk", 1);
-        animController.Attack1();
+        StartCoroutine("Attack1");
+        canFlip = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Player.transform.position.x - transform.position.x > 0 && Flipped)
+        if(canFlip)
         {
-            Flip();
-        } else if (Player.transform.position.x - transform.position.x < 0 && !Flipped)
-        {
-            Flip();
+            if (Player.transform.position.x - transform.position.x > 0 && Flipped)
+            {
+                Flip();
+            }
+            else if (Player.transform.position.x - transform.position.x < 0 && !Flipped)
+            {
+                Flip();
+            }
         }
+
     }
 
     void FixedUpdate()
@@ -92,10 +107,75 @@ public class LightBossController : MonoBehaviour
     }
     private IEnumerator Attack1()
     {
+        float jumpX = Att1JumpX;
+        float jumpY = Att1JumpY;
+        canFlip = false;
+        animController.Attack1();
+        yield return new WaitForSeconds(0.5f);
+        canFlip = true;
 
+        yield return new WaitForSeconds(0.5f);
+        canFlip = false;
+        Att1Swing1.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        Att1Swing1.SetActive(false);
+        yield return new WaitForSeconds(0.15f);
+        Teleport();
+        canFlip = true;
+
+        yield return new WaitForSeconds(0.6f);
+        canFlip = false;
+        Att1Swing2.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        Att1Swing2.SetActive(false);
+        canFlip = true;
+        yield return new WaitForSeconds(0.15f);
+
+        canFlip = false;
+        xDistance = Player.transform.position.x - transform.position.x;
+        jumpX = jumpX + Mathf.Abs(xDistance);
+        if (Flipped)
+        {
+            jumpX *= -1;
+        }
+        rb.linearVelocity = new Vector2(jumpX, jumpY);
+        for (int i = 0; i < 3; i++)
+        {
+
+
+            yield return new WaitForSeconds(0.2f);
+            Att1Swing3.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            Att1Swing3.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+
+        }
+        canFlip = true;
+        rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
+        Teleport();
+        yield return new WaitForSeconds(0.1f);
+        canFlip = false;
+        yield return new WaitForSeconds(0.3f);
+        Att1Swing4.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        Att1Swing4.SetActive(false);
+
+        canFlip = true;
         yield return null;
     }
 
+    private void Teleport()
+    {
+        xDistance = Player.transform.position.x - transform.position.x;
+        if (xDistance > 2)
+        {
+            transform.position = new Vector3(Player.transform.position.x - 1.5f, transform.position.y, transform.position.z);
+        }
+        else if (xDistance < -2)
+        {
+            transform.position = new Vector3(Player.transform.position.x + 1.5f, transform.position.y, transform.position.z);
+        }
+    }
     private void Flip()
     {
         Flipped = !Flipped;
