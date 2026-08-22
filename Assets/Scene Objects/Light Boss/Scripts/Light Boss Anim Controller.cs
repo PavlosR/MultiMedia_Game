@@ -7,6 +7,7 @@ public class LightBossAnimController : MonoBehaviour
     [SerializeField] private GameObject arm;
     [SerializeField] private GameObject body;
     [SerializeField] private GameObject sword;
+    [SerializeField] private SpriteRenderer swordRend;
     [SerializeField] private GameObject smear;
 
     private Animator armAn;
@@ -21,6 +22,8 @@ public class LightBossAnimController : MonoBehaviour
         bodyAn = body.GetComponent<Animator>();
         swordAn = sword.GetComponent<Animator>();
         smearAn = smear.GetComponent<Animator>();
+
+        swordRend = sword.GetComponent<SpriteRenderer>();
     }
     
     private void SetAction(int i)
@@ -58,9 +61,13 @@ public class LightBossAnimController : MonoBehaviour
 
     private IEnumerator Attack1Cor()
     {
+        swordRend.material.SetFloat("_Scan_Scale", 1f);
         SetAction(3);
         NextAction();
+        StartCoroutine("SwordSpawn");
         yield return new WaitForSeconds(0.5f);
+
+
         SetAction(0);
 
         NextAction();
@@ -76,5 +83,12 @@ public class LightBossAnimController : MonoBehaviour
         yield return null;
     }
 
-
+    private IEnumerator SwordSpawn()
+    {
+        for (int i = 0; i < 15; i++)
+        {
+            swordRend.material.SetFloat("_Scan_Scale", swordRend.material.GetFloat("_Scan_Scale") - 0.1f);
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 }

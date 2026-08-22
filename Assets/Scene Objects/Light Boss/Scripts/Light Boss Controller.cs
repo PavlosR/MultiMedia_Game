@@ -107,6 +107,7 @@ public class LightBossController : MonoBehaviour
     }
     private IEnumerator Attack1()
     {
+        yield return new WaitForSeconds(1f);
         float jumpX = Att1JumpX;
         float jumpY = Att1JumpY;
         canFlip = false;
