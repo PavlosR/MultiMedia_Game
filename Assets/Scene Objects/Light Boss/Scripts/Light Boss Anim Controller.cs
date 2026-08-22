@@ -7,8 +7,13 @@ public class LightBossAnimController : MonoBehaviour
     [SerializeField] private GameObject arm;
     [SerializeField] private GameObject body;
     [SerializeField] private GameObject sword;
-    [SerializeField] private SpriteRenderer swordRend;
     [SerializeField] private GameObject smear;
+    [SerializeField] private GameObject outline;
+
+    [SerializeField] private SpriteRenderer swordRend;
+    [SerializeField] private SpriteRenderer armRend;
+    [SerializeField] private SpriteRenderer bodyRend;
+    [SerializeField] private SpriteRenderer outlineRend;
 
     private Animator armAn;
     private Animator bodyAn;
@@ -24,6 +29,10 @@ public class LightBossAnimController : MonoBehaviour
         smearAn = smear.GetComponent<Animator>();
 
         swordRend = sword.GetComponent<SpriteRenderer>();
+        bodyRend = body.GetComponent<SpriteRenderer>();
+        armRend = arm.GetComponent<SpriteRenderer>();
+        outlineRend = outline.GetComponent<SpriteRenderer>();
+
     }
     
     private void SetAction(int i)
@@ -80,15 +89,71 @@ public class LightBossAnimController : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
 
         NextAction();
-        yield return null;
+        yield return new WaitForSeconds(0.2f);
+        StartCoroutine("OutlineSpawn");
     }
 
     private IEnumerator SwordSpawn()
     {
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 60; i++)
         {
-            swordRend.material.SetFloat("_Scan_Scale", swordRend.material.GetFloat("_Scan_Scale") - 0.1f);
+            swordRend.material.SetFloat("_Scan_Scale", swordRend.material.GetFloat("_Scan_Scale") - 0.025f);
             yield return new WaitForSeconds(0.01f);
         }
+    }
+
+    private IEnumerator OutlineSpawn()
+    {
+        outlineRend.material.SetFloat("_Scan_Scale", 0.25f);
+        for (int i = 0; i < 20; i++)
+        {
+            outlineRend.material.SetFloat("_Scan_Scale", outlineRend.material.GetFloat("_Scan_Scale") - 0.05f);
+            yield return new WaitForSeconds(0.02f);
+        }
+        outlineRend.material.SetFloat("_Scan_Scale", -0.75f);
+    }
+
+    public void Teleport()
+    {
+        StartCoroutine("TeleportCor");
+    }
+
+    public void TeleportReverse()
+    {
+        StartCoroutine("TeleportReverseCor");
+    }
+
+    private IEnumerator TeleportCor()
+    {
+        bodyRend.material.SetFloat("_Strength", 1);
+        armRend.material.SetFloat("_Strength", 1);
+        for (int i = 0;i < 25;i++)
+        {
+            bodyRend.material.SetFloat("_Scale", bodyRend.material.GetFloat("_Scale") + 0.006f);
+            armRend.material.SetFloat("_Scale", armRend.material.GetFloat("_Scale") + 0.006f);
+
+            yield return new WaitForSeconds(0.005f);
+        }
+
+
+        bodyRend.material.SetFloat("_Scale", 0.65f);
+        armRend.material.SetFloat("_Scale", 0.65f);
+    }
+
+    private IEnumerator TeleportReverseCor()
+    {
+        for (int i = 0; i < 25; i++)
+        {
+            bodyRend.material.SetFloat("_Scale", bodyRend.material.GetFloat("_Scale") - 0.006f);
+            armRend.material.SetFloat("_Scale", armRend.material.GetFloat("_Scale") - 0.006f);
+
+            yield return new WaitForSeconds(0.005f);
+        }
+
+        bodyRend.material.SetFloat("_Strength", 0);
+        armRend.material.SetFloat("_Strength", 0);
+
+        bodyRend.material.SetFloat("_Scale", 0.50038f);
+        armRend.material.SetFloat("_Scale", 0.50038f);
     }
 }

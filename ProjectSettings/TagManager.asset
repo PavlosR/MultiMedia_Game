@@ -14,7 +14,7 @@ TagManager:
   - Ground
   - Player
   - Boss
-  - 
+  - Impact Background
   - 
   - 
   - 
@@ -103,6 +103,18 @@ TagManager:
     locked: 0
   - name: Boss Arm
     uniqueID: 2553361109
+    locked: 0
+  - name: Player Legs
+    uniqueID: 1611614073
+    locked: 0
+  - name: Player Body
+    uniqueID: 115941185
+    locked: 0
+  - name: Player Arms
+    uniqueID: 4147257079
+    locked: 0
+  - name: Player Orb
+    uniqueID: 1435063661
     locked: 0
   m_RenderingLayers:
   - Default

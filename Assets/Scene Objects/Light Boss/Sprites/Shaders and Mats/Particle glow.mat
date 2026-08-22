@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Teleport
-  m_Shader: {fileID: -6465566751694194690, guid: edfe2d2d46ba96d42aa8aab2d2c33499, type: 3}
+  m_Name: Particle glow
+  m_Shader: {fileID: -6465566751694194690, guid: 56c2d357aec8555448e76e2bd1f29c24, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 850a2568ec57ff64fb94eb86864bd0ea, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -40,18 +40,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _Scale: 0.50038
-    - _Strength: 0
-    - _Tile: 0
+    m_Floats: []
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 0.9887183, b: 0.5490565, a: 1}
-    - _Color_2: {r: 16, g: 15.819492, b: 8.784904, a: 1}
-    - _UVRemap: {r: 0, g: 0, b: 0, a: 0}
+    - _Colour: {r: 23.968628, g: 23.603, b: 3.542532, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8240109446856345841
+--- !u!114 &927871613151982200
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

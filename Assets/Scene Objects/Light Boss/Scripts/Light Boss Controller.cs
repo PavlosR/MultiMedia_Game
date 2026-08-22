@@ -2,12 +2,12 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class LightBossController : MonoBehaviour
 {
     [SerializeField] private GameObject Player;
     [SerializeField] private LightBossAnimController animController;
+    [SerializeField] private ImpactFrame impactFrame;
     private Rigidbody2D rb;
 
     [Header("Stats")]
@@ -158,24 +158,49 @@ public class LightBossController : MonoBehaviour
         canFlip = false;
         yield return new WaitForSeconds(0.3f);
         Att1Swing4.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
+        for (int i = 0; i < 10; i++)
+        {
+            if (Att1Swing4.GetComponent<Damage>().hit)
+            {
+                Debug.Log("Impact!");
+                Att1Swing4.GetComponent<Damage>().hit = false;
+                impactFrame.SetImpact(0.5f);
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
+
         Att1Swing4.SetActive(false);
 
         canFlip = true;
         yield return null;
     }
 
+
     private void Teleport()
     {
+        StartCoroutine("TeleportCor");
+    }
+    private IEnumerator TeleportCor()
+    {
+
         xDistance = Player.transform.position.x - transform.position.x;
         if (xDistance > 2)
         {
+            animController.Teleport();
+
+            yield return new WaitForSeconds(0.125f);
             transform.position = new Vector3(Player.transform.position.x - 1.5f, transform.position.y, transform.position.z);
+            animController.TeleportReverse();
         }
         else if (xDistance < -2)
         {
+            animController.Teleport();
+
+            yield return new WaitForSeconds(0.125f);
             transform.position = new Vector3(Player.transform.position.x + 1.5f, transform.position.y, transform.position.z);
+            animController.TeleportReverse();
         }
+
     }
     private void Flip()
     {

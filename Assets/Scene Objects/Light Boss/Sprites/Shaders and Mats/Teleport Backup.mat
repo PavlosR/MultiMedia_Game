@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Teleport
-  m_Shader: {fileID: -6465566751694194690, guid: edfe2d2d46ba96d42aa8aab2d2c33499, type: 3}
+  m_Name: Teleport Backup
+  m_Shader: {fileID: -6465566751694194690, guid: 7ed0368cd6bd27c45957fbee24e9f391, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -27,6 +27,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 850a2568ec57ff64fb94eb86864bd0ea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_1b56081109e844e39b9ca9ef40d356a0_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 850a2568ec57ff64fb94eb86864bd0ea, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -41,17 +45,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Scale: 0.50038
+    - _Scale: 1
     - _Strength: 0
-    - _Tile: 0
+    - _Tile: 47.66
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 0.9887183, b: 0.5490565, a: 1}
-    - _Color_2: {r: 16, g: 15.819492, b: 8.784904, a: 1}
+    - _Color: {r: 0.125, g: 0.12358978, b: 0.06863206, a: 1}
     - _UVRemap: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8240109446856345841
+--- !u!114 &9123040465335088268
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

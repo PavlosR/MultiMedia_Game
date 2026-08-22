@@ -26,4 +26,9 @@ public class PlayerManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void Damage(float damage)
+    {
+        health -= damage;
+    }
 }
