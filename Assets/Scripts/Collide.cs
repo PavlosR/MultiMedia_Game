@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Damage : MonoBehaviour
+public class Collide : MonoBehaviour
 {
     [SerializeField] PlayerManager playerManager;
     [SerializeField] float damage;
@@ -15,24 +15,24 @@ public class Damage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Tags>(out var tags)) {
-            if(tags.HasTag("Player"))
+        Debug.Log("Collide");
+        if (collision.gameObject.TryGetComponent<Tags>(out var tags))
+        {
+            if (tags.HasTag("Collidable"))
             {
-                playerManager.Damage(damage);
-                StartCoroutine("Hit");
+                StartCoroutine("collide");
             }
 
         }
-
     }
 
-    private IEnumerator Hit()
+    private IEnumerator collide()
     {
 
         hit = true;
         yield return new WaitForSeconds(0.05f);
         hit = false;
-        if(destroy)
+        if (destroy)
         {
             GameObject.Destroy(gameObject);
         }

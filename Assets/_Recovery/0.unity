@@ -17321,7 +17321,7 @@ MonoBehaviour:
   Att1JumpX: 1
   Att1JumpY: 5.5
   spearProj: {fileID: 2352675465045404718, guid: 68d136dd5ed702a49934e6fe3c9fb13a, type: 3}
-  spearSpawnPos: {x: 0, y: 1.65, z: 0}
+  spearSpawnPos: {x: 1, y: 2.3, z: 0}
   spearSpeed: 10
   Att2JumpX: 15
   Att2JumpY: 5

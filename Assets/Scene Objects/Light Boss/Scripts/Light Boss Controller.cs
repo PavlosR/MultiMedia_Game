@@ -27,6 +27,16 @@ public class LightBossController : MonoBehaviour
     [SerializeField] private GameObject Att1Swing4;
     [SerializeField] private float Att1JumpX;
     [SerializeField] private float Att1JumpY;
+
+    [Header("Attack 1 Variables")]
+
+    [SerializeField] private GameObject spearProj;
+    [SerializeField] private Vector3 spearSpawnPos;
+
+    [SerializeField] private float spearSpeed;
+    [SerializeField] private float Att2JumpX;
+    [SerializeField] private float Att2JumpY;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -37,7 +47,7 @@ public class LightBossController : MonoBehaviour
     void Start()
     {
         //StartCoroutine("Walk", 1);
-        StartCoroutine("Attack1");
+        StartCoroutine("Attack2");
         canFlip = true;
     }
 
@@ -175,6 +185,33 @@ public class LightBossController : MonoBehaviour
         yield return null;
     }
 
+    private IEnumerator Attack2()
+    {
+        yield return new WaitForSeconds(1f);
+        float ogGrav = rb.gravityScale;
+        float direction = -transform.localScale.x;
+
+        rb.gravityScale = 0f;
+        Teleport();
+        yield return new WaitForSeconds(0.1f);
+        animController.Attack2();
+        rb.linearVelocity = new Vector2(Att2JumpX * direction, Att2JumpY);
+        for (int i = 0; i < 25; i++)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocityX / 1.1f, rb.linearVelocityY / 1.1f);
+            yield return new WaitForSeconds(0.02f);
+        }
+        rb.linearVelocity = new Vector2(0, 0);
+        canFlip = false;
+        yield return new WaitForSeconds(0.2f);
+        GameObject a = Instantiate(spearProj);
+        a.transform.position = spearSpawnPos;
+        a.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(Player.transform.position.x - a.transform.position.x, Player.transform.position.y - a.transform.position.y, 0).normalized * spearSpeed;
+        yield return new WaitForSeconds(0.5f);
+        Teleport();
+        rb.gravityScale = ogGrav;
+
+    }
 
     private void Teleport()
     {

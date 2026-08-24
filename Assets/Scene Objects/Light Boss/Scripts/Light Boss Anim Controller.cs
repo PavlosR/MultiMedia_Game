@@ -62,6 +62,10 @@ public class LightBossAnimController : MonoBehaviour
         NextAction();
     }
 
+    public void Attack2()
+    {
+        StartCoroutine("Attack2Cor");
+    }
     public void Attack1()
     {
         StartCoroutine("Attack1Cor");
@@ -93,14 +97,31 @@ public class LightBossAnimController : MonoBehaviour
         StartCoroutine("OutlineSpawn");
     }
 
+    private IEnumerator Attack2Cor()
+    {
+
+        SetAction(4);
+        NextAction();
+        StartCoroutine("SwordSpawn");
+        yield return new WaitForSeconds(0.5f);
+
+
+        SetAction(0);
+
+        NextAction();
+        yield return new WaitForSeconds(0.7f);
+    }
+
     private IEnumerator SwordSpawn()
     {
+        swordRend.material.SetFloat("_Scan_Scale", 1f);
         for (int i = 0; i < 60; i++)
         {
             swordRend.material.SetFloat("_Scan_Scale", swordRend.material.GetFloat("_Scan_Scale") - 0.025f);
             yield return new WaitForSeconds(0.01f);
         }
     }
+
 
     private IEnumerator OutlineSpawn()
     {

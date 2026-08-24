@@ -19,7 +19,7 @@ public class ImpactRelease : MonoBehaviour
 
     private void Update()
     {
-        transform.localScale = new Vector3(transform.localScale.x + 0.03f, transform.localScale.x + 0.03f, 1);
+        transform.localScale = new Vector3(transform.localScale.x + 0.04f, transform.localScale.x + 0.04f, 1);
         if (transform.localScale.x >= 100f)
         {
             gameObject.SetActive(false);
