@@ -27,6 +27,12 @@ public class Laser : MonoBehaviour
 
     [SerializeField] float distance = 10f;
 
+    [Header("Moving Attributes")]
+    [SerializeField] private float StartAngle;
+    [SerializeField] private int sweepDirection;
+    [SerializeField] private float sweepSpeed;
+    [SerializeField] public bool swapSide = false;
+
 
 
     private void Awake()
@@ -42,7 +48,13 @@ public class Laser : MonoBehaviour
     private void Start()
     {
         StartCoroutine("laserCount");
+        if (swapSide)
+        {
+            StartAngle += 120;
+        }
     }
+
+
     private void enableLaser()
     {
 
@@ -58,7 +70,7 @@ public class Laser : MonoBehaviour
         lineRenderer.material.SetFloat("_Scale", 57 * MathF.Pow(0.875f, lineRenderer.startWidth));
         lineRenderer.material.SetFloat("_Speed", -1.67f * MathF.Pow(1.195f, lineRenderer.startWidth));
 
-        if(!particleSpawned)
+        if (!particleSpawned)
         {
             particleSpawned = true;
             GameObject a = Instantiate(endParticle, hitPoint, Quaternion.identity);
@@ -71,14 +83,13 @@ public class Laser : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (mode == Mode.Track)
         {
             Vector2 point = Player.transform.position;
             Vector2 origin = firePoint.position;
             Vector2 direction = new Vector2(point.x - origin.x, point.y - origin.y).normalized;
-            Track(point, origin, direction);
             Vector2 hit = Raycast(origin, direction);
 
             if (float.IsNaN(hit.x) || float.IsNaN(hit.y))
@@ -86,7 +97,44 @@ public class Laser : MonoBehaviour
                 hitPoint = origin + (direction * distance);
             } else
             {
-                hitPoint = new Vector2(hit.x + direction.x, hit.y + direction.y);
+                hitPoint = new Vector2(hit.x, hit.y);
+            }
+        }
+
+        if (mode == Mode.Moving)
+        {
+
+
+            Vector2 direction = new Vector2(Mathf.Cos(StartAngle * Mathf.Deg2Rad), Mathf.Sin(StartAngle * Mathf.Deg2Rad));
+            Vector2 origin = firePoint.position;
+
+
+            Vector2 hit = Raycast(origin, direction);
+
+
+            if (float.IsNaN(hit.x) || float.IsNaN(hit.y))
+            {
+                hitPoint = origin + (direction * distance);
+            }
+            else
+            {
+                hitPoint = new Vector2(hit.x, hit.y);
+            }
+
+            if(firing)
+            {
+                enableLaser();
+                StartAngle = StartAngle - (Time.fixedDeltaTime * sweepSpeed * sweepDirection);
+            } else
+            {
+                if(Player.transform.position.x - hitPoint.x < 0)
+                {
+                    sweepDirection = 1;
+                    
+                } else
+                {
+                    sweepDirection = -1;
+                }
             }
         }
 
@@ -98,25 +146,12 @@ public class Laser : MonoBehaviour
     {
         StartCoroutine("widthChange", false);
         yield return new WaitForSeconds(0.5f);
+        Destroy(transform.parent.gameObject);
         Destroy(gameObject);
     }
 
-    private void Track(Vector2 point, Vector2 origin, Vector2 direction)
-    {
 
-        Vector2 hit = Raycast(origin, direction);
 
-        if (float.IsNaN(hit.x) || float.IsNaN(hit.y))
-        {
-            // Math: Origin + (Direction * Distance)
-            point = origin + (direction * distance);
-            Debug.DrawLine(origin, point, UnityEngine.Color.red);
-        }
-        else
-        {
-            Debug.DrawLine(origin, hit, UnityEngine.Color.green);
-        }
-    }
 
     private Vector2 Raycast(Vector2 origin, Vector2 direction)
     {
@@ -132,10 +167,18 @@ public class Laser : MonoBehaviour
 
     private IEnumerator laserCount()
     {
-        yield return new WaitForSeconds(TrackTime);
-        mode = Mode.None;
+        if(mode == Mode.Track)
+        {
+            yield return new WaitForSeconds(TrackTime);
+            mode = Mode.None;
+        }
+
         yield return new WaitForSeconds(ChargeTime);
-        enableLaser();
+        if(mode != Mode.Moving)
+        {
+            enableLaser();
+        }
+
         firing = true;
         StartCoroutine("widthChange", true);
         yield return new WaitForSeconds(ShootTime);
@@ -166,4 +209,5 @@ public class Laser : MonoBehaviour
         }
 
     }
+
 }

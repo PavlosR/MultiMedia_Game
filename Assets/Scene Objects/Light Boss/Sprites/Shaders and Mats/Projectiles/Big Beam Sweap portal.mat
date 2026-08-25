@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Throw Portal Flare
+  m_Name: Big Beam Sweap portal
   m_Shader: {fileID: -6465566751694194690, guid: a794a0631cdd69645a1d4ad0e82cc57e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -59,11 +59,11 @@ Material:
     - _Deformation: 0.05
     - _NoiseSpeed: 0.22
     - _RadialShear: 1
-    - _Scale: 1.02
+    - _Scale: 0
     - _Speed: 0.92
     - _Twirl: 1
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 3.2317069, g: 2.821231, b: 0.89675623, a: 1}
+    - _Color: {r: 25.853651, g: 22.569843, b: 7.1740484, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

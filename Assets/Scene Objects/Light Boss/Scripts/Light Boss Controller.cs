@@ -28,7 +28,7 @@ public class LightBossController : MonoBehaviour
     [SerializeField] private float Att1JumpX;
     [SerializeField] private float Att1JumpY;
 
-    [Header("Attack 1 Variables")]
+    [Header("Attack 2 Variables")]
 
     [SerializeField] private GameObject spearProj;
     [SerializeField] private Vector3 spearSpawnPos;
@@ -36,6 +36,15 @@ public class LightBossController : MonoBehaviour
     [SerializeField] private float spearSpeed;
     [SerializeField] private float Att2JumpX;
     [SerializeField] private float Att2JumpY;
+
+    [Header("Attack 3 Variables")]
+    [SerializeField] GameObject Att3Proj;
+    [SerializeField] private float Att3JumpX;
+    [SerializeField] private float Att3ProjForce;
+    [SerializeField] private float Att3SpreadAngle = 30f;
+    [SerializeField] private int[] Att3LaunchAngle = {0, 45, 90};
+    [SerializeField] private int Att3ProjCount = 3;
+    [SerializeField] private float Att3SwingTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -47,7 +56,7 @@ public class LightBossController : MonoBehaviour
     void Start()
     {
         //StartCoroutine("Walk", 1);
-        StartCoroutine("Attack2");
+        StartCoroutine("Attack3");
         canFlip = true;
     }
 
@@ -76,7 +85,7 @@ public class LightBossController : MonoBehaviour
 
     private void AttackChooser(int prevAttack = 100)
     {
-        int attack = Random.Range(0, 3);
+        int attack = Random.Range(0, 4);
         Debug.Log("Attack Chooser" + attack);
         if (attack == prevAttack)
         {
@@ -98,6 +107,7 @@ public class LightBossController : MonoBehaviour
                     break;
                 case 1: StartCoroutine("Attack1"); break;
                 case 2: StartCoroutine("Attack2"); break;
+                case 3: StartCoroutine("Attack3"); break;
             }
         }
     }
@@ -210,7 +220,7 @@ public class LightBossController : MonoBehaviour
         }
         canFlip = true;
         rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
-        Teleport();
+        Teleport(direction: true);
         yield return new WaitForSeconds(0.1f);
         canFlip = false;
         yield return new WaitForSeconds(0.3f);
@@ -238,7 +248,7 @@ public class LightBossController : MonoBehaviour
         float direction = -transform.localScale.x;
 
         rb.gravityScale = 0f;
-        Teleport();
+        Teleport(direction: true);
         yield return new WaitForSeconds(0.1f);
         animController.Attack2();
         rb.linearVelocity = new Vector2(Att2JumpX * direction, Att2JumpY);
@@ -264,11 +274,59 @@ public class LightBossController : MonoBehaviour
 
     }
 
-    private void Teleport(float distance = 1.5f, bool forced = false)
+    private IEnumerator Attack3()
     {
-        StartCoroutine(TeleportCor(distance, forced));
+        Teleport();
+        yield return new WaitForSeconds(0.2f);
+        float direction = -transform.localScale.x;
+        canFlip = false;
+        animController.Attack3();
+        rb.linearVelocity = new Vector2(Att3JumpX * direction, 0);
+        yield return new WaitForSeconds(0.1f);
+
+        int randIndex = Random.Range(0, Att3LaunchAngle.Length);
+        float launchAngle = Att3LaunchAngle[randIndex];
+        float angleStep = Att3SpreadAngle / (Att3ProjCount - 1);
+
+        float startAngleOffset = -Att3SpreadAngle / 2f;
+
+        for (int i = 0; i < Att3ProjCount; i++)
+        {
+            float currentAngleOffset = startAngleOffset + (angleStep * i);
+            float finalAngle = launchAngle + currentAngleOffset;
+
+            GameObject a = Instantiate(Att3Proj, transform.position, Quaternion.identity);
+
+            Rigidbody2D arb = a.GetComponent<Rigidbody2D>();
+
+            float radianAngle = finalAngle * Mathf.Deg2Rad;
+            float xVelocity = Mathf.Cos(radianAngle) * Att3ProjForce;
+            float yVelocity = Mathf.Sin(radianAngle) * Att3ProjForce;
+
+            if (Flipped)
+            {
+                xVelocity *= -1;
+            }
+
+            arb.linearVelocity = new Vector2(xVelocity, yVelocity);
+            yield return new WaitForSeconds(Att3SwingTime / Att3ProjCount);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        canFlip = true;
+        animController.Idle();
+        AttackChooser(3);
+
+
+
+        yield return null;
     }
-    private IEnumerator TeleportCor(float distance, bool forced)
+
+    private void Teleport(float distance = 1.5f, bool forced = false, bool direction = false)
+    {
+        StartCoroutine(TeleportCor(distance, forced, direction));
+    }
+    private IEnumerator TeleportCor(float distance, bool forced, bool direction)
     {
         if (forced)
         {
@@ -290,7 +348,7 @@ public class LightBossController : MonoBehaviour
                 animController.TeleportReverse();
             }
         } 
-        else
+        else if(direction)
         {
             xDistance = Player.transform.position.x - transform.position.x;
             if (xDistance > 2)
@@ -308,6 +366,31 @@ public class LightBossController : MonoBehaviour
                 yield return new WaitForSeconds(0.125f);
                 transform.position = new Vector3(Player.transform.position.x + distance, transform.position.y, transform.position.z);
                 animController.TeleportReverse();
+            }
+        }
+        else
+        {
+            xDistance = Player.transform.position.x - transform.position.x;
+            if (xDistance > 2 || xDistance < -2)
+            {
+                int i = Random.Range(0, 2);
+                if (i == 0)
+                {
+                    animController.Teleport();
+
+                    yield return new WaitForSeconds(0.125f);
+                    transform.position = new Vector3(Player.transform.position.x - distance, transform.position.y, transform.position.z);
+                    animController.TeleportReverse();
+                }
+                else if (i == 1)
+                {
+                    animController.Teleport();
+
+                    yield return new WaitForSeconds(0.125f);
+                    transform.position = new Vector3(Player.transform.position.x + distance, transform.position.y, transform.position.z);
+                    animController.TeleportReverse();
+                }
+
             }
         }
 

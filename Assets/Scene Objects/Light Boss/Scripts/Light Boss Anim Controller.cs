@@ -62,6 +62,11 @@ public class LightBossAnimController : MonoBehaviour
         NextAction();
     }
 
+    public void Attack3()
+    {
+        SetAction(5);
+        NextAction();
+    }
     public void Attack2()
     {
         StartCoroutine("Attack2Cor");
@@ -110,6 +115,7 @@ public class LightBossAnimController : MonoBehaviour
         NextAction();
         yield return new WaitForSeconds(0.7f);
     }
+
 
     private IEnumerator SwordSpawn()
     {

@@ -40,8 +40,8 @@ public class LineCollision : MonoBehaviour
         Vector2 firePoint = transform.InverseTransformPoint(laser.firePoint.position);
 
         float m = (hitPoint.y - firePoint.y) / (hitPoint.x - firePoint.x);
-        float deltaX = (width / 2f) * (m / Mathf.Pow(m * m + 1, 0.5f));
-        float deltaY = (width / 2f) * (1 / Mathf.Pow(1 + m * m, 0.5f));
+        float deltaX = (width / 4f) * (m / Mathf.Pow(m * m + 1, 0.5f));
+        float deltaY = (width / 4f) * (1 / Mathf.Pow(1 + m * m, 0.5f));
 
         Vector2[] offsets = new Vector2[2];
         offsets[0] = new Vector2(-deltaX, deltaY);
