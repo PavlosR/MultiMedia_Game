@@ -93,7 +93,6 @@ public class LightBossAnimController : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
 
         NextAction();
-        yield return new WaitForSeconds(0.2f);
         StartCoroutine("OutlineSpawn");
     }
 
@@ -126,9 +125,9 @@ public class LightBossAnimController : MonoBehaviour
     private IEnumerator OutlineSpawn()
     {
         outlineRend.material.SetFloat("_Scan_Scale", 0.25f);
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 40; i++)
         {
-            outlineRend.material.SetFloat("_Scan_Scale", outlineRend.material.GetFloat("_Scan_Scale") - 0.05f);
+            outlineRend.material.SetFloat("_Scan_Scale", outlineRend.material.GetFloat("_Scan_Scale") - 0.025f);
             yield return new WaitForSeconds(0.02f);
         }
         outlineRend.material.SetFloat("_Scan_Scale", -0.75f);

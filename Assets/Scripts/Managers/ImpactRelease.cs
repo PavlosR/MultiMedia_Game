@@ -14,7 +14,6 @@ public class ImpactRelease : MonoBehaviour
     private void OnEnable()
     {
         transform.localScale = new Vector3(0.01f, 0.01f, 1);
-        transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, 0);
     }
 
     private void Update()
@@ -35,5 +34,10 @@ public class ImpactRelease : MonoBehaviour
         {
             rend.material.SetFloat("_Opacity", 100);
         }
+    }
+
+    private void OnDisable()
+    {
+        Destroy(gameObject);
     }
 }

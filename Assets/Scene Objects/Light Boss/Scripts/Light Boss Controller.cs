@@ -74,22 +74,61 @@ public class LightBossController : MonoBehaviour
         
     }
 
+    private void AttackChooser(int prevAttack = 100)
+    {
+        int attack = Random.Range(0, 3);
+        Debug.Log("Attack Chooser" + attack);
+        if (attack == prevAttack)
+        {
+            Debug.Log("Recursion");
+            AttackChooser(prevAttack);
+            Debug.Log("Success");
+        } else
+        {
+            switch (attack)
+            {
+                case 0:
+                    if(checkWalk())
+                    {
+                        attack = Random.Range(1, 3);
+                        StartCoroutine("Walk", attack);
+                        break;
+                    }
+                    AttackChooser(prevAttack);
+                    break;
+                case 1: StartCoroutine("Attack1"); break;
+                case 2: StartCoroutine("Attack2"); break;
+            }
+        }
+    }
     
+    private bool checkWalk()
+    {
+        xDistance = Player.transform.position.x - transform.position.x;
+
+        if (xDistance < 2.5f && xDistance > -2.5f)
+        {
+            return false;
+
+        }
+        return true;
+    }
     private IEnumerator Walk(int storedAction)
     {
+        yield return new WaitForSeconds(0.5f);
         animController.Walk();
-        Debug.Log("Start Coroutine");
+
         for(int i = 0; i < 150; i++)
         {
             xDistance = Player.transform.position.x - transform.position.x;
             Debug.Log(xDistance);
-            if(xDistance > 3.5f)
+            if(xDistance > 2.5f)
             {
                 rb.linearVelocityX = walkSpeed;
                 Debug.Log("Walk");
                 yield return new WaitForFixedUpdate();
 
-            } else if(xDistance < -3.5f)
+            } else if(xDistance < -2.5f)
             {
                 rb.linearVelocityX = -walkSpeed;
                 Debug.Log("Walk");
@@ -99,25 +138,33 @@ public class LightBossController : MonoBehaviour
             }
             else
             {
+                rb.linearVelocityX = 0;
                 Debug.Log("Else");
+                animController.Idle();
                 switch (storedAction)
                 {
-                    case 1:
-                        
-                        break;
+                    case 1: StartCoroutine("Attack1"); break;
+                    case 2: StartCoroutine("Attack2"); break;
                 }
-                animController.Idle();
-                yield return new WaitForFixedUpdate();
+                StopCoroutine("Walk");
+                yield return new WaitForSeconds(1);
+                break;
             }
 
         }
-        Debug.Log("End");
+        Debug.Log("Not Stopped");
+        Teleport();
         animController.Idle();
+        switch (storedAction)
+        {
+            case 1: StartCoroutine("Attack1"); break;
+            case 2: StartCoroutine("Attack2"); break;
+        }
+
         //end walking cycle and use an action
     }
     private IEnumerator Attack1()
     {
-        yield return new WaitForSeconds(1f);
         float jumpX = Att1JumpX;
         float jumpY = Att1JumpY;
         canFlip = false;
@@ -172,22 +219,21 @@ public class LightBossController : MonoBehaviour
         {
             if (Att1Swing4.GetComponent<Damage>().hit)
             {
-                Debug.Log("Impact!");
                 Att1Swing4.GetComponent<Damage>().hit = false;
-                impactFrame.SetImpact(0.5f);
+                impactFrame.SetImpact(0.25f);
             }
             yield return new WaitForSeconds(0.01f);
         }
 
         Att1Swing4.SetActive(false);
-
+        yield return new WaitForSeconds(0.5f);
         canFlip = true;
-        yield return null;
+        animController.Idle();
+        AttackChooser(1);
     }
 
     private IEnumerator Attack2()
     {
-        yield return new WaitForSeconds(1f);
         float ogGrav = rb.gravityScale;
         float direction = -transform.localScale.x;
 
@@ -203,40 +249,68 @@ public class LightBossController : MonoBehaviour
         }
         rb.linearVelocity = new Vector2(0, 0);
         canFlip = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.17f);
         GameObject a = Instantiate(spearProj);
-        a.transform.position = spearSpawnPos;
+        a.transform.position = new Vector3(transform.position.x + spearSpawnPos.x, transform.position.y + spearSpawnPos.y, 0);
         a.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(Player.transform.position.x - a.transform.position.x, Player.transform.position.y - a.transform.position.y, 0).normalized * spearSpeed;
-        yield return new WaitForSeconds(0.5f);
-        Teleport();
+        yield return new WaitForSeconds(0.25f);
+        Teleport(forced: true);
+        animController.Idle();
+        yield return new WaitForSeconds(0.125f);
         rb.gravityScale = ogGrav;
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        yield return new WaitForSeconds(0.125f);
+        AttackChooser(2);
 
     }
 
-    private void Teleport()
+    private void Teleport(float distance = 1.5f, bool forced = false)
     {
-        StartCoroutine("TeleportCor");
+        StartCoroutine(TeleportCor(distance, forced));
     }
-    private IEnumerator TeleportCor()
+    private IEnumerator TeleportCor(float distance, bool forced)
     {
-
-        xDistance = Player.transform.position.x - transform.position.x;
-        if (xDistance > 2)
+        if (forced)
         {
-            animController.Teleport();
+            xDistance = Player.transform.position.x - transform.position.x;
+            if (xDistance >= 0)
+            {
+                animController.Teleport();
 
-            yield return new WaitForSeconds(0.125f);
-            transform.position = new Vector3(Player.transform.position.x - 1.5f, transform.position.y, transform.position.z);
-            animController.TeleportReverse();
-        }
-        else if (xDistance < -2)
+                yield return new WaitForSeconds(0.125f);
+                transform.position = new Vector3(Player.transform.position.x - distance, transform.position.y, transform.position.z);
+                animController.TeleportReverse();
+            }
+            else if (xDistance < 0)
+            {
+                animController.Teleport();
+
+                yield return new WaitForSeconds(0.125f);
+                transform.position = new Vector3(Player.transform.position.x + distance, transform.position.y, transform.position.z);
+                animController.TeleportReverse();
+            }
+        } 
+        else
         {
-            animController.Teleport();
+            xDistance = Player.transform.position.x - transform.position.x;
+            if (xDistance > 2)
+            {
+                animController.Teleport();
 
-            yield return new WaitForSeconds(0.125f);
-            transform.position = new Vector3(Player.transform.position.x + 1.5f, transform.position.y, transform.position.z);
-            animController.TeleportReverse();
+                yield return new WaitForSeconds(0.125f);
+                transform.position = new Vector3(Player.transform.position.x - distance, transform.position.y, transform.position.z);
+                animController.TeleportReverse();
+            }
+            else if (xDistance < -2)
+            {
+                animController.Teleport();
+
+                yield return new WaitForSeconds(0.125f);
+                transform.position = new Vector3(Player.transform.position.x + distance, transform.position.y, transform.position.z);
+                animController.TeleportReverse();
+            }
         }
+
 
     }
     private void Flip()

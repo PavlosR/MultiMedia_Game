@@ -8,6 +8,7 @@ public class PlayerParticleManager : MonoBehaviour
     [SerializeField] private ParticleSystem star;
     [SerializeField] private GameObject starObj;
     [SerializeField] private GameObject ImpactRelease;
+    [SerializeField] private GameObject Player;
 
 
     public void Impact(float time)
@@ -17,18 +18,18 @@ public class PlayerParticleManager : MonoBehaviour
 
     private IEnumerator ImpactCor(float time)
     {
-
+        
         var emissionModule = star.emission;
         absorb.gameObject.SetActive(true);
         absorb.Play();
         emissionModule.rateOverTime = (1 / time) * 6;
         StartCoroutine("StarShape", time);
-        StartCoroutine("Rings", time);
 
         yield return new WaitForSeconds(time);
         release.Play();
         release.gameObject.SetActive(true);
-        ImpactRelease.SetActive(true);
+        GameObject a = Instantiate(ImpactRelease);
+        a.transform.position = Player.transform.position;
     }
 
     private IEnumerator StarShape(float time)
