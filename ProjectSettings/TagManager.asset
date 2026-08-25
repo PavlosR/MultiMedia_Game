@@ -92,6 +92,12 @@ TagManager:
   - name: Start UI Foreground
     uniqueID: 963058321
     locked: 0
+  - name: Laser Beam
+    uniqueID: 2425240743
+    locked: 0
+  - name: Ground
+    uniqueID: 662927833
+    locked: 0
   - name: Boss Body
     uniqueID: 1227017005
     locked: 0
@@ -115,6 +121,9 @@ TagManager:
     locked: 0
   - name: Player Orb
     uniqueID: 1435063661
+    locked: 0
+  - name: Laser Particle
+    uniqueID: 2447279125
     locked: 0
   m_RenderingLayers:
   - Default
