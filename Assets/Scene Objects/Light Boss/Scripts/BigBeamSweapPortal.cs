@@ -5,8 +5,8 @@ using UnityEngine;
 public class BigBeamSweapPortal : MonoBehaviour
 {
     [SerializeField] private GameObject beamPrefab;
-    [SerializeField] private float StartTime;
-    [SerializeField] private int attackCount;
+    [SerializeField] public float StartTime;
+    [SerializeField] public int attackCount;
     [SerializeField] private SpriteRenderer rend;
     private bool flipped = false;
 
@@ -53,15 +53,27 @@ public class BigBeamSweapPortal : MonoBehaviour
         if(backwards)
         {
             mat.SetFloat("_Scale", 1.2f);
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 50; i++)
             {
                 mat.SetFloat("_Scale", mat.GetFloat("_Scale") - 0.012f); ;
                 yield return new WaitForSeconds(0.03f);
             }
             mat.SetFloat("_Scale", 0f);
-            GameObject.Destroy(gameObject);
+            rend.enabled = false;
+            Debug.Log($"[{GetInstanceID()}] Scale loop done, calling Destroy at {Time.realtimeSinceStartup}");
+            destroy();
         }
 
+    }
+
+    private void destroy()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log($"[{GetInstanceID()}] OnDestroy at {Time.realtimeSinceStartup}");
     }
 
 

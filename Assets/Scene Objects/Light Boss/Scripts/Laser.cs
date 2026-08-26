@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 using static UnityEngine.UI.Image;
@@ -11,15 +12,20 @@ public class Laser : MonoBehaviour
     public Transform firePoint;
     public Vector3 hitPoint;
     private Material laserMat;
+    [SerializeField] private List<AudioClip> beamSound = new List<AudioClip>();
     [SerializeField] LayerMask targetLayers;
     public bool particleSpawned = false;
+
+    private AudioSource audioSource;
+
+    private bool audioPlayed = false;
 
     public bool firing;
 
     public enum Mode { Track, SetPoint, Moving, Target, None }
     [SerializeField] public Mode mode;
 
-    [SerializeField] private GameObject Player;
+    [SerializeField] static GameObject Player;
     [SerializeField] private GameObject endParticle;
     [SerializeField] public float ChargeTime;
     [SerializeField] public float ShootTime;
@@ -37,11 +43,15 @@ public class Laser : MonoBehaviour
 
     private void Awake()
     {
+        if (Player == null)
+        {
+            Player = GameObject.Find("Player");
+        }
         lineRenderer = GetComponent<LineRenderer>();
         laserMat = lineRenderer.material;
         lineCollision = GetComponent<LineCollision>();
-
-        Player = GameObject.Find("Player");
+        audioSource = GetComponent<AudioSource>();
+        audioSource.generator = beamSound[UnityEngine.Random.Range(0, beamSound.Count)];
         hitPoint = Player.transform.position;
     }
 
@@ -57,7 +67,11 @@ public class Laser : MonoBehaviour
 
     private void enableLaser()
     {
-
+        if (audioPlayed == false)
+        {
+            audioSource.Play();
+            audioPlayed = true;
+        }
         Vector2 Centre = new Vector2(hitPoint.x - firePoint.position.x, hitPoint.y - firePoint.position.y);
         float rotation = Mathf.Atan2(Centre.normalized.y, Centre.normalized.x);
 
@@ -146,8 +160,10 @@ public class Laser : MonoBehaviour
     {
         StartCoroutine("widthChange", false);
         yield return new WaitForSeconds(0.5f);
-        Destroy(transform.parent.gameObject);
         Destroy(gameObject);
+
+
+
     }
 
 
@@ -208,6 +224,11 @@ public class Laser : MonoBehaviour
             lineRenderer.material.SetFloat("_Width", -0.1f);
         }
 
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(transform.parent.gameObject);
     }
 
 }

@@ -1282,7 +1282,7 @@ TextureImporter:
       name: Boss Arms_47
       rect:
         serializedVersion: 2
-        x: 512
+        x: 256
         y: 0
         width: 256
         height: 256
@@ -1318,6 +1318,28 @@ TextureImporter:
       bones: []
       spriteID: 118180c233fb87c4d8aacb4184a8d60f
       internalID: -926161769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Arms_49
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a1bcace3592cf41b240387b86959ef
+      internalID: -412271133
       vertices: []
       indices: 
       edges: []
@@ -1382,6 +1404,7 @@ TextureImporter:
       Boss Arms_46: -1974411200
       Boss Arms_47: 634544233
       Boss Arms_48: -926161769
+      Boss Arms_49: -412271133
       Boss Arms_5: 4880952346479623497
       Boss Arms_6: 1148011207298426225
       Boss Arms_7: 1772795653156692000

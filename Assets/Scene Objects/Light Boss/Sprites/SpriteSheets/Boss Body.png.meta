@@ -1482,7 +1482,7 @@ TextureImporter:
       name: Boss Body_55
       rect:
         serializedVersion: 2
-        x: 512
+        x: 256
         y: 0
         width: 256
         height: 256
@@ -1518,6 +1518,28 @@ TextureImporter:
       bones: []
       spriteID: 4dbe03b1f49cf954b9950ae83eb71330
       internalID: 1483753703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Body_57
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2d30c1a64a73442b865df517488c5f
+      internalID: -1834582300
       vertices: []
       indices: 
       edges: []
@@ -1591,6 +1613,7 @@ TextureImporter:
       Boss Body_54: 1048310636
       Boss Body_55: -317689361
       Boss Body_56: 1483753703
+      Boss Body_57: -1834582300
       Boss Body_6: -7013532292159201536
       Boss Body_7: -2469885283083282133
       Boss Body_8: -8477099111621703760

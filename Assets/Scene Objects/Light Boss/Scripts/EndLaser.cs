@@ -31,7 +31,7 @@ public class EndLaser : MonoBehaviour
         yield return new WaitForSeconds(time);
         changeSize = true;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }
