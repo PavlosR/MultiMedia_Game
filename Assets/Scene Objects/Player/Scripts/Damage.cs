@@ -7,19 +7,35 @@ public class Damage : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] public bool hit;
     [SerializeField] public bool destroy;
+    [SerializeField] public bool bypassParry;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
     {
         playerManager = GameObject.Find("Player Manager").GetComponent<PlayerManager>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<Tags>(out var tags)) {
             if(tags.HasTag("Player"))
             {
-                playerManager.Damage(damage);
-                StartCoroutine("Hit");
+                float direction = collision.transform.position.x - transform.position.x;
+                Debug.Log(direction);
+                bool left;
+                if (direction < 0)
+                {
+                    left = true;
+                }
+                else
+                {
+                    left = false;
+                }
+                playerManager.Damage(damage, bypassParry, left);
+                if (!playerManager.iFrames)
+                {
+                    StartCoroutine("Hit");
+                }
+
             }
 
         }

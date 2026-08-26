@@ -1,8 +1,13 @@
+using System.Collections;
 using UnityEngine;
 
 public class LightSpear : MonoBehaviour
 {
-
+    [SerializeField] private float deathTime;
+    private void Start()
+    {
+        StartCoroutine("DeathTime");
+    }
     private void LateUpdate()
     {
         float angle = Mathf.Atan2(-GetComponent<Rigidbody2D>().linearVelocityX, GetComponent<Rigidbody2D>().linearVelocityY) * Mathf.Rad2Deg;
@@ -15,5 +20,11 @@ public class LightSpear : MonoBehaviour
             GetComponent<Damage>().hit = false;
 
         }
+    }
+
+    private IEnumerator DeathTime()
+    {
+        yield return new WaitForSeconds(deathTime);
+        Destroy(gameObject);
     }
 }

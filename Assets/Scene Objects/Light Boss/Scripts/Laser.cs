@@ -50,9 +50,10 @@ public class Laser : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         laserMat = lineRenderer.material;
         lineCollision = GetComponent<LineCollision>();
-        audioSource = GetComponent<AudioSource>();
-        audioSource.generator = beamSound[UnityEngine.Random.Range(0, beamSound.Count)];
-        hitPoint = Player.transform.position;
+        if (mode == Mode.Track || mode == Mode.Moving)
+        {
+            hitPoint = Player.transform.position;
+        }
     }
 
     private void Start()
@@ -69,16 +70,25 @@ public class Laser : MonoBehaviour
     {
         if (audioPlayed == false)
         {
-            audioSource.Play();
+            AudioSource.PlayClipAtPoint(beamSound[UnityEngine.Random.Range(0, beamSound.Count)], transform.position);
             audioPlayed = true;
         }
         Vector2 Centre = new Vector2(hitPoint.x - firePoint.position.x, hitPoint.y - firePoint.position.y);
         float rotation = Mathf.Atan2(Centre.normalized.y, Centre.normalized.x);
 
-        lineRenderer.enabled = true;
+
+
+            lineRenderer.enabled = true;
         lineCollision.enabled = true;
         lineRenderer.SetPosition(0, firePoint.position);
-        lineRenderer.SetPosition(1, hitPoint);
+        if (mode == Mode.SetPoint)
+        {
+            lineRenderer.SetPosition(1, new Vector2(hitPoint.x + firePoint.position.x, hitPoint.y + firePoint.position.y));
+        } else
+        {
+            lineRenderer.SetPosition(1, hitPoint);
+        }
+
         lineRenderer.material.SetVector("_Centre", Centre);
         lineRenderer.material.SetFloat("_Rotation", rotation);
         lineRenderer.material.SetFloat("_Scale", 57 * MathF.Pow(0.875f, lineRenderer.startWidth));
@@ -88,7 +98,7 @@ public class Laser : MonoBehaviour
         {
             particleSpawned = true;
             GameObject a = Instantiate(endParticle, hitPoint, Quaternion.identity);
-            a.GetComponent<EndLaser>().time = ShootTime + 1f;
+            a.GetComponent<EndLaser>().time = ShootTime + 0.25f;
             a.GetComponent<EndLaser>().laser = this;
             var mainModule = a.GetComponent<ParticleSystem>().main;
             mainModule.startSize = new ParticleSystem.MinMaxCurve(1.0f * lineRenderer.startWidth, 5.0f * lineRenderer.startWidth);
@@ -150,6 +160,11 @@ public class Laser : MonoBehaviour
                     sweepDirection = -1;
                 }
             }
+        }
+
+        if (mode == Mode.SetPoint)
+        {
+
         }
 
 

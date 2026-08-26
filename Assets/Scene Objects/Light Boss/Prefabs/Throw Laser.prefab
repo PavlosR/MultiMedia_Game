@@ -173,6 +173,8 @@ GameObject:
   - component: {fileID: 440812489588672337}
   - component: {fileID: 4858599498913287969}
   - component: {fileID: 6940692995944718165}
+  - component: {fileID: 7177482729361076556}
+  - component: {fileID: 8799022790453795769}
   m_Layer: 0
   m_Name: Throw Laser
   m_TagString: Untagged
@@ -320,18 +322,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Laser
   firePoint: {fileID: 965742935977582661}
   hitPoint: {x: 0, y: 0, z: 0}
+  beamSound:
+  - {fileID: 8300000, guid: f969e78037fa45545946f8917969e079, type: 3}
+  - {fileID: 8300000, guid: 17e8c6dfdce631348b4b1dbc8e4bb07e, type: 3}
+  - {fileID: 8300000, guid: 411b2064ea5787b41ab12942a8c144e3, type: 3}
   targetLayers:
     serializedVersion: 2
     m_Bits: 64
   particleSpawned: 0
   firing: 0
   mode: 0
-  Player: {fileID: 0}
   endParticle: {fileID: 129628966384952166, guid: dd883dfa30b09db48a6428c090a1c360, type: 3}
   ChargeTime: 0.5
   ShootTime: 0.5
   TrackTime: 1
   distance: 30
+  StartAngle: 0
+  sweepDirection: 0
+  sweepSpeed: 0
+  swapSide: 0
 --- !u!114 &4858599498913287969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,3 +404,117 @@ PolygonCollider2D:
       - {x: 0.32442963, y: -1.6180341}
       - {x: 2.6755707, y: -1.6180339}
   m_UseDelaunayMesh: 1
+--- !u!82 &7177482729361076556
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979917109468047912}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8799022790453795769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979917109468047912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16aa10d1f7291a2479c82e8e090984c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damage
+  playerManager: {fileID: 0}
+  damage: 10
+  hit: 0
+  destroy: 0
+  bypassParry: 1

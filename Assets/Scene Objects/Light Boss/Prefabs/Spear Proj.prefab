@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   playerManager: {fileID: 0}
-  damage: 0
+  damage: 15
   hit: 0
   destroy: 0
 --- !u!114 &4466210610247198356
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bd311f994133a44ad35b803d61ea34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  deathTime: 7
 --- !u!114 &8986669182178242073
 MonoBehaviour:
   m_ObjectHideFlags: 0

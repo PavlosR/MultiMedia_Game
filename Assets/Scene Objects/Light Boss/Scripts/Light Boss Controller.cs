@@ -65,7 +65,7 @@ public class LightBossController : MonoBehaviour
     void Start()
     {
         //StartCoroutine("Walk", 1);
-        StartCoroutine("Attack4");
+        StartCoroutine("Attack1", 4);
         canFlip = true;
     }
 
@@ -286,15 +286,10 @@ public class LightBossController : MonoBehaviour
                         canFlip = false;
                         yield return new WaitForSeconds(0.3f);
                         Att1Swing4.SetActive(true);
-                        for (int i = 0; i < 10; i++)
-                        {
-                            if (Att1Swing4.GetComponent<Damage>().hit)
-                            {
-                                Att1Swing4.GetComponent<Damage>().hit = false;
-                                impactFrame.SetImpact(0.25f);
-                            }
-                            yield return new WaitForSeconds(0.01f);
-                        }
+
+                        impactFrame.SetImpact(0.25f);
+
+                        yield return new WaitForSeconds(0.1f);
 
                         Att1Swing4.SetActive(false);
                         yield return new WaitForSeconds(0.5f);
@@ -564,6 +559,8 @@ public class LightBossController : MonoBehaviour
             virtualCam.m_Lens.OrthographicSize = Amount;
 
     }
+
+
     private void Flip()
     {
         Flipped = !Flipped;

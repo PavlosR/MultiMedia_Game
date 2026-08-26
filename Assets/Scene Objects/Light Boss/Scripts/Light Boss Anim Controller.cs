@@ -145,10 +145,11 @@ public class LightBossAnimController : MonoBehaviour
     private IEnumerator SwordSpawn()
     {
         swordRend.material.SetFloat("_Scan_Scale", 1f);
+        WaitForSeconds _delay = new WaitForSeconds(0.01f);
         for (int i = 0; i < 60; i++)
         {
             swordRend.material.SetFloat("_Scan_Scale", swordRend.material.GetFloat("_Scan_Scale") - 0.025f);
-            yield return new WaitForSeconds(0.01f);
+            yield return _delay;
         }
     }
 
@@ -156,10 +157,11 @@ public class LightBossAnimController : MonoBehaviour
     private IEnumerator OutlineSpawn()
     {
         outlineRend.material.SetFloat("_Scan_Scale", 0.25f);
+        WaitForSeconds _delay = new WaitForSeconds(0.02f);
         for (int i = 0; i < 40; i++)
         {
             outlineRend.material.SetFloat("_Scan_Scale", outlineRend.material.GetFloat("_Scan_Scale") - 0.025f);
-            yield return new WaitForSeconds(0.02f);
+            yield return _delay;
         }
         outlineRend.material.SetFloat("_Scan_Scale", -0.75f);
     }
@@ -176,14 +178,17 @@ public class LightBossAnimController : MonoBehaviour
 
     private IEnumerator TeleportCor()
     {
+        bodyRend.material.SetFloat("_Scale", 0.50038f);
+        armRend.material.SetFloat("_Scale", 0.50038f);
         bodyRend.material.SetFloat("_Strength", 1);
         armRend.material.SetFloat("_Strength", 1);
+        WaitForSeconds _delay = new WaitForSeconds(0.005f);
         for (int i = 0;i < 25;i++)
         {
             bodyRend.material.SetFloat("_Scale", bodyRend.material.GetFloat("_Scale") + 0.006f);
             armRend.material.SetFloat("_Scale", armRend.material.GetFloat("_Scale") + 0.006f);
 
-            yield return new WaitForSeconds(0.005f);
+            yield return _delay;
         }
 
 
@@ -193,12 +198,15 @@ public class LightBossAnimController : MonoBehaviour
 
     private IEnumerator TeleportReverseCor()
     {
+        bodyRend.material.SetFloat("_Scale", 0.65f);
+        armRend.material.SetFloat("_Scale", 0.65f);
+        WaitForSeconds _delay = new WaitForSeconds(0.005f);
         for (int i = 0; i < 25; i++)
         {
             bodyRend.material.SetFloat("_Scale", bodyRend.material.GetFloat("_Scale") - 0.006f);
             armRend.material.SetFloat("_Scale", armRend.material.GetFloat("_Scale") - 0.006f);
 
-            yield return new WaitForSeconds(0.005f);
+            yield return _delay;
         }
 
         bodyRend.material.SetFloat("_Strength", 0);

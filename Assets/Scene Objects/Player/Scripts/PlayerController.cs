@@ -23,12 +23,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform groundCheck;
 
+    [SerializeField] private bool Flipped;
+
 
     [SerializeField] private Vector2 movementInput;
 
+    [Header("Parry")]
+    [SerializeField] public bool parry;
+    [SerializeField] private float parryTime;
+    [SerializeField] private float parryForceX;
+    [SerializeField] private float parryForceY;
+
     [Header("Jump")]
     [SerializeField] private bool jumpInput;
-    [SerializeField] private bool isGrounded;
+    [SerializeField] public bool isGrounded;
     [SerializeField] private bool groundJump;
     [SerializeField] private bool airJump;
     [SerializeField] private int airJumps;
@@ -48,7 +56,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashXMem;
 
 
-    private Rigidbody2D rb;
+
+
+    public Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -56,6 +66,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerMan = playerManager.GetComponent<PlayerManager>();
         inputMan = playerManager.GetComponent<InputManagerPlayer>();
+        parryTime = playerMan.parryTime;
 
     }
 
@@ -71,7 +82,8 @@ public class PlayerController : MonoBehaviour
         if (movementInput.x > 0)
         {
             dashXMem = 1;
-        } else if (movementInput.x < 0)
+        }
+        else if (movementInput.x < 0)
         {
             dashXMem = -1;
         }
@@ -85,6 +97,17 @@ public class PlayerController : MonoBehaviour
             dashDirection.x = movementInput.x;
         }
 
+        if (rb.linearVelocityX > 0 && Flipped)
+        {
+            Flip();
+        } else if (rb.linearVelocityX < 0 && !Flipped)
+        {
+            Flip();
+        }
+        MovementCheck();
+        JumpCheck();
+        DashCheck();
+        ParryCheck();
     }
 
     private void FixedUpdate()
@@ -95,15 +118,31 @@ public class PlayerController : MonoBehaviour
             groundJump = true;
             airJumps = trueAirJumps;
 
-        } else
+        }
+        else
         {
             airJump = true;
         }
-        MovementCheck();
-        JumpCheck();
-        DashCheck();
+
     }
 
+    private void ParryCheck()
+    {
+        if (inputMan.parryVal && playerMan.canParry)
+        {
+            StartCoroutine("Parry");
+        }
+    }
+
+    private IEnumerator Parry()
+    {
+        playerMan.parrying = true;
+        playerMan.canParry = false;
+        yield return new WaitForSeconds(parryTime);
+        playerMan.parrying = false;
+        yield return new WaitForSeconds(playerMan.parryDownTime);
+        playerMan.canParry = true;
+    }
     private void MovementCheck()
     {
         if (!dashing)
@@ -162,7 +201,7 @@ public class PlayerController : MonoBehaviour
             {
                 groundJump = false;
             }
-        } 
+        }
 
     }
 
@@ -180,7 +219,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocityX, rb.linearVelocityY);
         }
-        else 
+        else
         {
             if (rb.linearVelocityY > 0)
             {
@@ -193,7 +232,8 @@ public class PlayerController : MonoBehaviour
         if (jumpInput)
         {
             canJump = false;
-        } else
+        }
+        else
         {
             canJump = true;
         }
@@ -211,7 +251,8 @@ public class PlayerController : MonoBehaviour
             }
             dashHeld = true;
 
-        } else if (!dashInput)
+        }
+        else if (!dashInput)
         {
             dashHeld = false;
         }
@@ -231,5 +272,24 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
 
+    }
+
+    public void parryKnock(bool left)
+    {
+
+        if (left)
+        {
+            rb.linearVelocity = new Vector2(-parryForceX, parryForceY);
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(parryForceX, parryForceY);
+        }
+    }
+
+    private void Flip()
+    {
+        Flipped = !Flipped;
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
 }

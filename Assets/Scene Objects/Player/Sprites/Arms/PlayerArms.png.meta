@@ -264,7 +264,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
+        y: 384
         width: 48
         height: 48
       alignment: 0
@@ -286,7 +286,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 240
+        y: 384
         width: 48
         height: 48
       alignment: 0
@@ -308,7 +308,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 240
+        y: 384
         width: 48
         height: 48
       alignment: 0
@@ -330,7 +330,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 240
+        y: 384
         width: 48
         height: 48
       alignment: 0
@@ -352,7 +352,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 240
+        y: 384
         width: 48
         height: 48
       alignment: 0
@@ -374,7 +374,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 336
         width: 48
         height: 48
       alignment: 0
@@ -396,7 +396,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 192
+        y: 336
         width: 48
         height: 48
       alignment: 0
@@ -418,7 +418,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 192
+        y: 336
         width: 48
         height: 48
       alignment: 0
@@ -440,7 +440,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 192
+        y: 336
         width: 48
         height: 48
       alignment: 0
@@ -462,7 +462,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 336
         width: 48
         height: 48
       alignment: 0
@@ -484,7 +484,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
+        y: 288
         width: 48
         height: 48
       alignment: 0
@@ -506,7 +506,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 144
+        y: 288
         width: 48
         height: 48
       alignment: 0
@@ -528,7 +528,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 144
+        y: 288
         width: 48
         height: 48
       alignment: 0
@@ -550,7 +550,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 144
+        y: 288
         width: 48
         height: 48
       alignment: 0
@@ -572,7 +572,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 144
+        y: 288
         width: 48
         height: 48
       alignment: 0
@@ -594,7 +594,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 240
         width: 48
         height: 48
       alignment: 0
@@ -616,7 +616,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 96
+        y: 240
         width: 48
         height: 48
       alignment: 0
@@ -638,7 +638,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 96
+        y: 240
         width: 48
         height: 48
       alignment: 0
@@ -660,7 +660,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 96
+        y: 240
         width: 48
         height: 48
       alignment: 0
@@ -682,7 +682,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 96
+        y: 240
         width: 48
         height: 48
       alignment: 0
@@ -704,7 +704,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -726,7 +726,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 48
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -748,7 +748,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 48
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -770,7 +770,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 48
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -792,7 +792,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 48
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -814,7 +814,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -836,7 +836,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -858,7 +858,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -871,6 +871,358 @@ TextureImporter:
       bones: []
       spriteID: 680ca032b2b57e550800000000000000
       internalID: 6190016453673664646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_28
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad449a1d2bc4bd841832dabcc4119573
+      internalID: 83193825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_29
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995b60d16ca161c46b491877ea21a1b1
+      internalID: 1474714995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1fbb3a22a64d94e800b331ebf9577e
+      internalID: -173206658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_31
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 944d49c242775b5468709ba1184d560b
+      internalID: -399802850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_32
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf51933b74a0da44d9b7d4722ac2a2d1
+      internalID: -317576221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_33
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30aa5c054e3f2640b72e72178ce99e2
+      internalID: -706152648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f8729fc27b9d742aad49045afde13f
+      internalID: -1020754210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7122e6786c57bf344a0cc15ae236584e
+      internalID: 1903798887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_36
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3cd9b25b0d37042ad62c2836882ae1
+      internalID: -1464685423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_37
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e705d19e3c156949aead71a48c53730
+      internalID: 1949497767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_38
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35f9398f266dc740a2d0fb8f3dfdd14
+      internalID: 570635065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_39
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add8eaea4bc5dfa43b49a7300b189288
+      internalID: 195698441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46f9348ee5cdd54ab25012fc4327ef7
+      internalID: -953587326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_41
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43017a53418597149b08d45ac1923e09
+      internalID: -1734684631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1828ccb7fd21e41bf8bf5532f05613
+      internalID: -397700395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerArms_43
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f8c8b06dea1a8d489e900aa35ea20ac
+      internalID: 1454848624
       vertices: []
       indices: 
       edges: []
@@ -889,7 +1241,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":6.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":9.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       PlayerArms_0: 7485750460025115935
       PlayerArms_1: -2091584175837477712
@@ -912,8 +1264,24 @@ TextureImporter:
       PlayerArms_25: -2568580370877890171
       PlayerArms_26: -7301290951365607814
       PlayerArms_27: 6190016453673664646
+      PlayerArms_28: 83193825
+      PlayerArms_29: 1474714995
       PlayerArms_3: 7883556654362683252
+      PlayerArms_30: -173206658
+      PlayerArms_31: -399802850
+      PlayerArms_32: -317576221
+      PlayerArms_33: -706152648
+      PlayerArms_34: -1020754210
+      PlayerArms_35: 1903798887
+      PlayerArms_36: -1464685423
+      PlayerArms_37: 1949497767
+      PlayerArms_38: 570635065
+      PlayerArms_39: 195698441
       PlayerArms_4: -4689790669595927658
+      PlayerArms_40: -953587326
+      PlayerArms_41: -1734684631
+      PlayerArms_42: -397700395
+      PlayerArms_43: 1454848624
       PlayerArms_5: 1256656827910984291
       PlayerArms_6: -3727470572417441249
       PlayerArms_7: 6024794513884117689

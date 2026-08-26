@@ -146,8 +146,8 @@ TextureImporter:
       name: PlayerOrb_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 48
+        y: 240
         width: 48
         height: 48
       alignment: 0
@@ -168,8 +168,8 @@ TextureImporter:
       name: PlayerOrb_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
+        x: 96
+        y: 240
         width: 48
         height: 48
       alignment: 0
@@ -190,8 +190,8 @@ TextureImporter:
       name: PlayerOrb_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 144
+        y: 240
         width: 48
         height: 48
       alignment: 0
@@ -212,8 +212,8 @@ TextureImporter:
       name: PlayerOrb_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 96
+        x: 192
+        y: 240
         width: 48
         height: 48
       alignment: 0
@@ -234,8 +234,8 @@ TextureImporter:
       name: PlayerOrb_4
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
+        x: 0
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -256,8 +256,8 @@ TextureImporter:
       name: PlayerOrb_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 48
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -278,8 +278,8 @@ TextureImporter:
       name: PlayerOrb_6
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 96
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -300,8 +300,8 @@ TextureImporter:
       name: PlayerOrb_7
       rect:
         serializedVersion: 2
-        x: 96
-        y: 48
+        x: 144
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -322,8 +322,8 @@ TextureImporter:
       name: PlayerOrb_8
       rect:
         serializedVersion: 2
-        x: 144
-        y: 48
+        x: 192
+        y: 192
         width: 48
         height: 48
       alignment: 0
@@ -344,8 +344,8 @@ TextureImporter:
       name: PlayerOrb_9
       rect:
         serializedVersion: 2
-        x: 192
-        y: 48
+        x: 0
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -366,8 +366,8 @@ TextureImporter:
       name: PlayerOrb_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 48
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -388,8 +388,8 @@ TextureImporter:
       name: PlayerOrb_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 96
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -410,8 +410,8 @@ TextureImporter:
       name: PlayerOrb_12
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 144
+        y: 144
         width: 48
         height: 48
       alignment: 0
@@ -424,6 +424,94 @@ TextureImporter:
       bones: []
       spriteID: 909a76d8663858e498fb99a7f40979e6
       internalID: 1556297257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerOrb_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30549ae6d163a0f4c8eb987d9105701c
+      internalID: -1485590785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerOrb_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c06a997db6d7b4792e9475f88c9a1a
+      internalID: -854806660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerOrb_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f07c06def6340d40a30680077b2d7bd
+      internalID: -2054663103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerOrb_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1704933fd1725f4a8f64addca21a3e5
+      internalID: 160110571
       vertices: []
       indices: 
       edges: []
@@ -442,13 +530,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":3.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":9.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       PlayerOrb_0: -735764120097200610
       PlayerOrb_1: -6630944684567213447
       PlayerOrb_10: 4098921398652151837
       PlayerOrb_11: 264656593
       PlayerOrb_12: 1556297257
+      PlayerOrb_13: -1485590785
+      PlayerOrb_14: -854806660
+      PlayerOrb_15: -2054663103
+      PlayerOrb_16: 160110571
       PlayerOrb_2: -7035146944780360790
       PlayerOrb_3: -2282651692553394405
       PlayerOrb_4: 3008076012970259505
