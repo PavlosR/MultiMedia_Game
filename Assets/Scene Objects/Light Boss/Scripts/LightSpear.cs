@@ -4,6 +4,7 @@ using UnityEngine;
 public class LightSpear : MonoBehaviour
 {
     [SerializeField] private float deathTime;
+    [SerializeField] GameObject floorbeam;
     private void Start()
     {
         StartCoroutine("DeathTime");
@@ -26,5 +27,10 @@ public class LightSpear : MonoBehaviour
     {
         yield return new WaitForSeconds(deathTime);
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(floorbeam, transform.position, Quaternion.identity);
     }
 }

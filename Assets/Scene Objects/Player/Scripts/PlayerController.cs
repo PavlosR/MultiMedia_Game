@@ -55,6 +55,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 dashDirection;
     [SerializeField] private float dashXMem;
 
+    [Header("Attack")]
+    [SerializeField] private float attack1Cooldown;
+    private bool attackCooldown = false;
+    [SerializeField] private GameObject proj1;
+
 
 
 
@@ -108,6 +113,7 @@ public class PlayerController : MonoBehaviour
         JumpCheck();
         DashCheck();
         ParryCheck();
+        AttackCheck();
     }
 
     private void FixedUpdate()
@@ -126,6 +132,21 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void AttackCheck()
+    {
+        if(!attackCooldown && inputMan.attackVal)
+        {
+            Instantiate(proj1, transform.position, Quaternion.identity);
+            StartCoroutine(attackTimer());
+        }
+    }
+
+    private IEnumerator attackTimer()
+    {
+        attackCooldown = true;
+        yield return new WaitForSeconds(attack1Cooldown);
+        attackCooldown = false;
+    }
     private void ParryCheck()
     {
         if (inputMan.parryVal && playerMan.canParry)

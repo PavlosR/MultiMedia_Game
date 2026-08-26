@@ -16,7 +16,7 @@ public class LightBossController : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] private float Damage;
-    [SerializeField] private float Health;
+    [SerializeField] public float Health;
 
     [SerializeField] private bool Flipped;
     private bool canFlip;

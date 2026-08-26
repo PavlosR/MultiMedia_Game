@@ -13679,7 +13679,7 @@ MonoBehaviour:
   fade: 1
   current: {fileID: 673730899}
   enable: {fileID: 1680436014}
-  Scene: Boss 1
+  Scene: Player Testing
 --- !u!114 &1482789334
 MonoBehaviour:
   m_ObjectHideFlags: 0

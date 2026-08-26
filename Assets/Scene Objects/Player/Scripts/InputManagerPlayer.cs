@@ -48,7 +48,7 @@ public class InputManagerPlayer : MonoBehaviour
         moveVal = moveAction.ReadValue<Vector2>();
         lookVal = lookAction.ReadValue<Vector2>();
 
-        attackVal = attackAction.WasPressedThisFrame();
+        attackVal = attackAction.IsPressed();
         dashVal = dashAction.IsPressed();
         parryVal = parryAction.WasPressedThisFrame();
         jumpVal = jumpAction.IsPressed();

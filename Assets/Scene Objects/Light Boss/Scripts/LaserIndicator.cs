@@ -29,7 +29,15 @@ public class LaserIndicator : MonoBehaviour
     private void Update()
     {
         lineRenderer.SetPosition(0, laser.firePoint.position);
-        lineRenderer.SetPosition(1, laser.hitPoint);
+        if(mode == Laser.Mode.SetPoint)
+        {
+            lineRenderer.SetPosition(1, (transform.position - laser.hitPoint) * -1);
+        } 
+        else
+        {
+            lineRenderer.SetPosition(1, laser.hitPoint);
+        }
+
     }
 
     private IEnumerator Countdown()
