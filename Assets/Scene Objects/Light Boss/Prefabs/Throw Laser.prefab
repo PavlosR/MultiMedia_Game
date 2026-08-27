@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   playerManager: {fileID: 0}
-  damage: 10
+  damage: 30
   hit: 0
   destroy: 0
   bypassParry: 1

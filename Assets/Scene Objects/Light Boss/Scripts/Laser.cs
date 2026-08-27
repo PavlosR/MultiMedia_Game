@@ -39,6 +39,8 @@ public class Laser : MonoBehaviour
     [SerializeField] private float sweepSpeed;
     [SerializeField] public bool swapSide = false;
 
+    public Vector2 hitPointTrue;
+
 
 
     private void Awake()
@@ -74,11 +76,19 @@ public class Laser : MonoBehaviour
             audioPlayed = true;
         }
         Vector2 Centre = new Vector2(hitPoint.x - firePoint.position.x, hitPoint.y - firePoint.position.y);
+
+        if (mode == Mode.SetPoint)
+        {
+            hitPointTrue = new Vector2(hitPoint.x + firePoint.position.x, hitPoint.y + firePoint.position.y);
+        } else
+        {
+            hitPointTrue = hitPoint;
+        }
         float rotation = Mathf.Atan2(Centre.normalized.y, Centre.normalized.x);
 
 
 
-            lineRenderer.enabled = true;
+        lineRenderer.enabled = true;
         lineCollision.enabled = true;
         lineRenderer.SetPosition(0, firePoint.position);
         if (mode == Mode.SetPoint)

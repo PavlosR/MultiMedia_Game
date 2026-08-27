@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3366960344133901017}
   - component: {fileID: 5760872964206684086}
   - component: {fileID: 2534834176443479982}
+  - component: {fileID: 2212342610732282672}
   m_Layer: 0
   m_Name: FloorBeam
   m_TagString: Untagged
@@ -95,8 +96,8 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1611614073
+  m_SortingLayer: 24
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Positions:
@@ -183,8 +184,8 @@ MonoBehaviour:
   firing: 0
   mode: 1
   endParticle: {fileID: 129628966384952166, guid: dd883dfa30b09db48a6428c090a1c360, type: 3}
-  ChargeTime: 1
-  ShootTime: 1
+  ChargeTime: 0.5
+  ShootTime: 0.75
   TrackTime: 0
   distance: 10
   StartAngle: 0
@@ -352,6 +353,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2212342610732282672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097825877791763163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16aa10d1f7291a2479c82e8e090984c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damage
+  playerManager: {fileID: 0}
+  damage: 30
+  hit: 0
+  destroy: 0
+  bypassParry: 1
 --- !u!1 &4917042837916168980
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,8 +448,8 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1847688171
+  m_SortingLayer: 28
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Positions:
@@ -510,5 +528,5 @@ MonoBehaviour:
   mode: 1
   laser: {fileID: 592926845508457395}
   startTime: 0.1
-  endTime: 1
+  endTime: 1.5
   opacity: 0.5

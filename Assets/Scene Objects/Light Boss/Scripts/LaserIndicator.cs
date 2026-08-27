@@ -31,7 +31,7 @@ public class LaserIndicator : MonoBehaviour
         lineRenderer.SetPosition(0, laser.firePoint.position);
         if(mode == Laser.Mode.SetPoint)
         {
-            lineRenderer.SetPosition(1, (transform.position - laser.hitPoint) * -1);
+            lineRenderer.SetPosition(1, new Vector2(transform.position.x - laser.hitPoint.x, (transform.position.y - laser.hitPoint.y) * -1));
         } 
         else
         {

@@ -36,26 +36,19 @@ public class LineCollision : MonoBehaviour
     public List<Vector2> CalculateColliderPoints()
     {
         float width = GetComponent<LineRenderer>().startWidth;
-        Vector2 hitPoint = transform.InverseTransformPoint(laser.hitPoint);
+        Vector2 hitPoint = transform.InverseTransformPoint(laser.hitPointTrue);
         Vector2 firePoint = transform.InverseTransformPoint(laser.firePoint.position);
 
-        float m = (hitPoint.y - firePoint.y) / (hitPoint.x - firePoint.x);
-        float deltaX = (width / 4f) * (m / Mathf.Pow(m * m + 1, 0.5f));
-        float deltaY = (width / 4f) * (1 / Mathf.Pow(1 + m * m, 0.5f));
-
-        Vector2[] offsets = new Vector2[2];
-        offsets[0] = new Vector2(-deltaX, deltaY);
-        offsets[1] = new Vector2(deltaX, -deltaY);
+        Vector2 dir = (hitPoint - firePoint).normalized;
+        Vector2 normal = new Vector2(-dir.y, dir.x) * (width / 4f);
 
         List<Vector2> colliderPositions = new List<Vector2>
-        {
-            hitPoint + offsets[0],
-            firePoint + offsets[0],
-            firePoint + offsets[1],
-            hitPoint + offsets[1]
-
-
-        };
+    {
+        hitPoint - normal,
+        firePoint - normal,
+        firePoint + normal,
+        hitPoint + normal
+    };
 
         return colliderPositions;
     }

@@ -82,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -398255307
+  m_SortingLayer: 22
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4677645812845581388, guid: 4f339b17e92dfe8478e939727cec0269, type: 3}
@@ -155,9 +155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   playerManager: {fileID: 0}
-  damage: 15
+  damage: 50
   hit: 0
   destroy: 0
+  bypassParry: 0
 --- !u!114 &4466210610247198356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   deathTime: 7
+  floorbeam: {fileID: 6114127632957179525, guid: 1e2d2f8efae2012458b2344b4aa96c83, type: 3}
 --- !u!114 &8986669182178242073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +188,7 @@ MonoBehaviour:
   playerManager: {fileID: 0}
   damage: 0
   hit: 0
+  collided: 0
   destroy: 1
 --- !u!50 &1830624726590329603
 Rigidbody2D:

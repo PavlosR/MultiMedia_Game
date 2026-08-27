@@ -31,6 +31,10 @@ public class LightSpear : MonoBehaviour
 
     private void OnDestroy()
     {
-        Instantiate(floorbeam, transform.position, Quaternion.identity);
+        if(GetComponent<Collide>().collided)
+        {
+            Instantiate(floorbeam, transform.position, Quaternion.identity);
+        }
+
     }
 }

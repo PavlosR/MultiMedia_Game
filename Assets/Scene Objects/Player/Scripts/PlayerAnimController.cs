@@ -66,6 +66,13 @@ public class PlayerAnimController : MonoBehaviour
 
 
         }
+        else if (playerController.attacking)
+        {
+            armAn.SetInteger("Action Num", 3);
+            bodyAn.SetInteger("Action Num", 3);
+            legsAn.SetInteger("Action Num", 3);
+            orbAn.SetInteger("Action Num", 3);
+        }
         else if (!playerController.isGrounded)
         {
             if (playerController.rb.linearVelocityY > 0)
@@ -92,7 +99,8 @@ public class PlayerAnimController : MonoBehaviour
             legsRend.material = parryMat;
             orbRend.material = parryMat;
             parryMatChange = true;
-        }  else if (!playerManager.parrying && parryMatChange)
+        }  
+        else if (!playerManager.parrying && parryMatChange)
         {
             armRend.material = armsMat;
             bodyRend.material = bodyMat;
@@ -100,7 +108,7 @@ public class PlayerAnimController : MonoBehaviour
             orbRend.material = orbMat;
             parryMatChange = false;
         }
-            armAn.SetInteger("Action Num", i);
+        armAn.SetInteger("Action Num", i);
         bodyAn.SetInteger("Action Num", i);
         legsAn.SetInteger("Action Num", i);
         orbAn.SetInteger("Action Num", i);

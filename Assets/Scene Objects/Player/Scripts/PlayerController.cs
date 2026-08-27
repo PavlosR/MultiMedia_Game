@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float parryTime;
     [SerializeField] private float parryForceX;
     [SerializeField] private float parryForceY;
+    [SerializeField] private float knockForceX;
+    [SerializeField] private float knockForceY;
 
     [Header("Jump")]
     [SerializeField] private bool jumpInput;
@@ -57,7 +59,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Attack")]
     [SerializeField] private float attack1Cooldown;
-    private bool attackCooldown = false;
+    public bool attacking;
+    [SerializeField] public bool attackCooldown = false;
     [SerializeField] private GameObject proj1;
 
 
@@ -134,11 +137,20 @@ public class PlayerController : MonoBehaviour
 
     private void AttackCheck()
     {
-        if(!attackCooldown && inputMan.attackVal)
+        if (inputMan.attackVal)
         {
-            Instantiate(proj1, transform.position, Quaternion.identity);
-            StartCoroutine(attackTimer());
+            attacking = true;
+            if (!attackCooldown)
+            {
+                Instantiate(proj1, transform.position, Quaternion.identity);
+                StartCoroutine(attackTimer());
+            }
         }
+        else
+        {
+            attacking = false;
+        }
+
     }
 
     private IEnumerator attackTimer()
@@ -297,7 +309,6 @@ public class PlayerController : MonoBehaviour
 
     public void parryKnock(bool left)
     {
-
         if (left)
         {
             rb.linearVelocity = new Vector2(-parryForceX, parryForceY);
@@ -305,6 +316,18 @@ public class PlayerController : MonoBehaviour
         else
         {
             rb.linearVelocity = new Vector2(parryForceX, parryForceY);
+        }
+    }
+
+    public void hitKnock(bool left)
+    {
+        if (left)
+        {
+            rb.linearVelocity = new Vector2(-knockForceX, knockForceY);
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(knockForceX, knockForceY);
         }
     }
 

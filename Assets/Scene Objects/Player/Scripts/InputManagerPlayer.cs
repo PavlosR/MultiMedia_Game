@@ -12,6 +12,7 @@ public class InputManagerPlayer : MonoBehaviour
     private InputAction dashAction;
     private InputAction parryAction;
     private InputAction jumpAction;
+    private InputAction quitAction;
 
     public Vector2 moveVal;
     public Vector2 lookVal;
@@ -30,6 +31,7 @@ public class InputManagerPlayer : MonoBehaviour
         dashAction = inputActions.FindAction("Dash");
         parryAction = inputActions.FindAction("Parry");
         jumpAction = inputActions.FindAction("Jump");
+        quitAction = inputActions.FindAction("Quit");
     }
 
     private void OnDisable()
@@ -52,6 +54,11 @@ public class InputManagerPlayer : MonoBehaviour
         dashVal = dashAction.IsPressed();
         parryVal = parryAction.WasPressedThisFrame();
         jumpVal = jumpAction.IsPressed();
+
+        if (quitAction.IsPressed())
+        {
+            Application.Quit();
+        }
 
     }
 }

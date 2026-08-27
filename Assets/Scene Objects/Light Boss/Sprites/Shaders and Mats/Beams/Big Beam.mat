@@ -50,7 +50,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Rotation: 0
+    - _Rotation: 1.57
     - _Scale: 50
     - _Speed: -2
     - _Width: 1

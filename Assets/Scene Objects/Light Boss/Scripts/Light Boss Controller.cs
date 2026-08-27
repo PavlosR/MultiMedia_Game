@@ -14,6 +14,14 @@ public class LightBossController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera virtualCam;
     private Rigidbody2D rb;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip swordSwing;
+    [SerializeField] private AudioClip swordSwing2;
+    [SerializeField] private AudioClip swordSwing3;
+    [SerializeField] private AudioClip spearThrow;
+    
+    
+    
     [Header("Stats")]
     [SerializeField] private float Damage;
     [SerializeField] public float Health;
@@ -65,13 +73,22 @@ public class LightBossController : MonoBehaviour
     void Start()
     {
         //StartCoroutine("Walk", 1);
-        StartCoroutine("Attack1", 4);
+        StartCoroutine("Spawn");
         canFlip = true;
     }
 
+    private IEnumerator Spawn()
+    {
+        yield return new WaitForSeconds(5f);
+        AttackChooser();
+    }
     // Update is called once per frame
     void Update()
     {
+        if(Health <= 0)
+        {
+            Die();
+        }
         if(canFlip)
         {
             if (Player.transform.position.x - transform.position.x > 0 && Flipped)
@@ -225,6 +242,7 @@ public class LightBossController : MonoBehaviour
         float jumpY = Att1JumpY;
         canFlip = false;
         animController.Attack1(count);
+        AudioSource.PlayClipAtPoint(swordSwing, transform.position);
         yield return new WaitForSeconds(0.5f);
         if (count  <= 0)
         {
@@ -239,6 +257,7 @@ public class LightBossController : MonoBehaviour
 
             yield return new WaitForSeconds(0.5f);
             canFlip = false;
+            AudioSource.PlayClipAtPoint(swordSwing, transform.position);
             Att1Swing1.SetActive(true);
             yield return new WaitForSeconds(0.1f);
             Att1Swing1.SetActive(false);
@@ -250,6 +269,7 @@ public class LightBossController : MonoBehaviour
 
                 yield return new WaitForSeconds(0.6f);
                 canFlip = false;
+                AudioSource.PlayClipAtPoint(swordSwing, transform.position);
                 Att1Swing2.SetActive(true);
                 yield return new WaitForSeconds(0.1f);
                 Att1Swing2.SetActive(false);
@@ -269,7 +289,7 @@ public class LightBossController : MonoBehaviour
                     for (int i = 0; i < 3; i++)
                     {
 
-
+                        AudioSource.PlayClipAtPoint(swordSwing2, transform.position);
                         yield return new WaitForSeconds(0.2f);
                         Att1Swing3.SetActive(true);
                         yield return new WaitForSeconds(0.1f);
@@ -286,7 +306,7 @@ public class LightBossController : MonoBehaviour
                         canFlip = false;
                         yield return new WaitForSeconds(0.3f);
                         Att1Swing4.SetActive(true);
-
+                        AudioSource.PlayClipAtPoint(swordSwing3, transform.position);
                         impactFrame.SetImpact(0.25f);
 
                         yield return new WaitForSeconds(0.1f);
@@ -327,6 +347,7 @@ public class LightBossController : MonoBehaviour
             rb.linearVelocity = new Vector2(0, 0);
             canFlip = false;
             yield return new WaitForSeconds(0.17f);
+            AudioSource.PlayClipAtPoint(spearThrow, transform.position);
             GameObject a = Instantiate(spearProj);
             a.transform.position = new Vector3(transform.position.x + spearSpawnPos.x, transform.position.y + spearSpawnPos.y, 0);
             a.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(Player.transform.position.x - a.transform.position.x, Player.transform.position.y - a.transform.position.y, 0).normalized * spearSpeed;
@@ -565,5 +586,10 @@ public class LightBossController : MonoBehaviour
     {
         Flipped = !Flipped;
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

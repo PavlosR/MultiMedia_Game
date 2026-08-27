@@ -1,6 +1,7 @@
 using Cinemachine;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -30,10 +31,19 @@ public class PlayerManager : MonoBehaviour
     public bool iFrames;
 
     [SerializeField] private AudioClip parryAudio;
+    [SerializeField] private AudioClip hurtAudio;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Update()
+    {
+        if (health <= 0f)
+        {
+            StartCoroutine(die());
+        }
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -64,6 +74,13 @@ public class PlayerManager : MonoBehaviour
             health -= damage;
             animController.hit();
             StartCoroutine(IFrames());
+            impulseSource.GenerateImpulse();
+            Hitstop();
+            AudioSource.PlayClipAtPoint(hurtAudio, player.transform.position);
+            if (!playerController.isGrounded)
+            {
+                playerController.hitKnock(left);
+            }
             return false;
         }
         return false;
@@ -102,5 +119,12 @@ public class PlayerManager : MonoBehaviour
         iFrames = true;
         yield return new WaitForSeconds(iFrameTime);
         iFrames = false;
+    }
+
+    private IEnumerator die()
+    {
+        Destroy(player);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
